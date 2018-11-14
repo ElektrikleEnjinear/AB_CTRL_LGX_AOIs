@@ -1,4 +1,4 @@
-# AB_CTRL_LGX_AOIs
+# AB_CTRL_LGX_AOIs (Use the AOI import function to load the AOIs into the PLC)
 Allen Bradley Control Logix PLC AOIs
 <p>All the AOIs are designed as objects such that the objects in an HMI/SCADA system can be created to connect directly to the PLC AOIs by typing in the tag designation for the equipment.  Example: Pump 101 tag is 'P101'.  Created a 'P101' child object in the PLC by using the programmer generated AOI parent object.  If the object code (with correct attributes) is created in the HMI/SCADA software, a programmer simply creates a child object (pointed at the correct PLC) from the HMI/SCADA parent object with the same tag designation of 'P101".  The objects in the PLC and HMI are then connected.  The manual part of this process is to map the PLC Input/Output (I/O) tags to the PLC AOI Attributes.  I have experienced having manual control of a motor within 30 minutes of starting the program (I/O must be completely verified as operational).<p/>
   
