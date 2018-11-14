@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--LOGIC TO SELECT LEAD AND LAG EQUIPMENT-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="AOI_LD_LG" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2013-05-07T18:13:49.584Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:39:25 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Name="AOI_LD_ALT" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2010-06-16T16:41:26.349Z" CreatedBy="KJ\DaveW" EditedDate="2013-02-22T00:47:45.691Z" EditedBy="SOPHIA\SCADA2" SoftwareRevision="v19.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only"/>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only"/>
+<Parameter Name="LD_PTR" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="true" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="NO_UNITS_AVAIL" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[###################################################################
+Lead_Alternate
+When this instruction is called, point to the next equipment unit to be lead.
+Routine handles up to 6 equipment units in a set. (Modify if more are needed.)
+###################################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[###################################################################
+Lead_Alternate
+When this instruction is called, point to the next equipment unit to be lead.
+Routine handles up to 6 equipment units in a set. (Modify if more are needed.)
+###################################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[ADD(LD_PTR,1,LD_PTR);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[GEQ(LD_PTR,NO_UNITS_AVAIL)MOV(0,LD_PTR);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Use="Target" Name="AOI_LD_LG" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2010-07-12T18:53:01.823Z" CreatedBy="KJ\DaveW" EditedDate="2013-05-07T18:13:49.584Z" EditedBy="KJC\ArthurStokes" SoftwareRevision="v19.01"
+>
+<Description>
+<![CDATA[LOGIC TO SELECT LEAD AND LAG EQUIPMENT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LOGIC TO SELECT LEAD AND LAG EQUIPMENT]]>
+</LocalizedDescription>
+</Description>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="UNITS_AVLBL" TagType="Base" DataType="DINT" Usage="Input" Radix="Binary" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AVAILABLE UNITS, BIT MATCHES AVAILABLE UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AVAILABLE UNITS, BIT MATCHES AVAILABLE UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LEADSELSW" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG1SELSW" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG2SELSW" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG3SELSW" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG4SELSW" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG5SELSW" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LEAD_UNIT" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[SELECTED LEAD UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECTED LEAD UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG1_UNIT" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[SELECTED LAG 1 UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECTED LAG 1 UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG2_UNIT" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[SELECTED LAG 2 UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECTED LAG 2 UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG3_UNIT" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[SELECTED LAG 3 UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECTED LAG 3 UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG4_UNIT" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[SELECTED LAG 4 UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECTED LAG 4 UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LAG5_UNIT" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[SELECTED LAG 5 UNIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECTED LAG 5 UNIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="NO_UNITS" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[NUMBER OF UNITS IN SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[NUMBER OF UNITS IN SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="LD_PTR" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[POINTER FOR LEAD UNIT FROM ALTERNATOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[POINTER FOR LEAD UNIT FROM ALTERNATOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="ALT_CALL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[CALL FOR ALTERNATE OF LEAD]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CALL FOR ALTERNATE OF LEAD]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="NO_UNITS_AVAIL" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[NUMBER OF UNITS AVAILABLE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[NUMBER OF UNITS AVAILABLE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="ALT_SEL" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALTERNATE LEAD WITH ALTERNATOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALTERNATE LEAD WITH ALTERNATOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="UNIT_ORDER" DataType="DINT" Dimensions="6" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ORDER FOR CALL OF UNITS TO START]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ORDER FOR CALL OF UNITS TO START]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="6" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ALT_LEAD_ORDER" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[FIRST UNIT IN A SET ORDER WHEN IN ALTERNATE MODE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FIRST UNIT IN A SET ORDER WHEN IN ALTERNATE MODE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="UNIT_AVAIL" DataType="DINT" Dimensions="6" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ARRAY OF AVAILABLE UNITS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ARRAY OF AVAILABLE UNITS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="6" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="AVAIL_UNIT_ORDER" DataType="DINT" Dimensions="6" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[AVAILABLE UNIT RUN ORDER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AVAILABLE UNIT RUN ORDER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="6" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="UA_SUB" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[UNITS AVAILABLE SUBSCRIPT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[UNITS AVAILABLE SUBSCRIPT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="AUO_SUB" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[AVAILABLE UNIT ORDER SUBSCRIPT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AVAILABLE UNIT ORDER SUBSCRIPT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ALT_LD_SUB" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[SUBSCRIPT FOR ALTERNATE LEAD UNIT ORDER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SUBSCRIPT FOR ALTERNATE LEAD UNIT ORDER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ES_AOI_UNIT_LD_ALT" DataType="AOI_LD_ALT" ExternalAccess="None">
+<Description>
+<![CDATA[UNIT LEAD ALTERNATOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[UNIT LEAD ALTERNATOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[1,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="AOI_LD_ALT">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+<DataValueMember Name="LD_PTR" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="NO_UNITS_AVAIL" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ALT_UNIT_ORDER" DataType="DINT" Dimensions="6" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ALTERNATOR UNIT ORDER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALTERNATOR UNIT ORDER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="6" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ALT_O_SUB" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ALTERNATOR ORDER SUBSCRIPT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALTERNATOR ORDER SUBSCRIPT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[*****************************************************************
+INITIALIZE REGISTERS TO ZERO
+*****************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************************
+INITIALIZE REGISTERS TO ZERO
+*****************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[MOV(0,LEAD_UNIT)MOV(0,LAG1_UNIT)MOV(0,LAG2_UNIT)MOV(0,LAG3_UNIT)MOV(0,LAG4_UNIT)MOV(0,LAG5_UNIT);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[*****************************************************************
+INITIALIZE REGISTERS TO ZERO
+*****************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************************
+INITIALIZE REGISTERS TO ZERO
+*****************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[MOV(0,NO_UNITS_AVAIL)MOV(0,ALT_O_SUB)FLL(0,UNIT_AVAIL[0],6)FLL(0,AVAIL_UNIT_ORDER[0],6)FLL(0,ALT_UNIT_ORDER[0],6);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[EQU(LAG1SELSW,0)MOV(2,LAG1SELSW);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[EQU(LAG2SELSW,0)MOV(3,LAG2SELSW);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[EQU(LAG3SELSW,0)MOV(4,LAG3SELSW);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[EQU(LAG4SELSW,0)MOV(5,LAG4SELSW);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[EQU(LAG5SELSW,0)MOV(6,LAG5SELSW);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[***************************************************
+SET MINIMUM NUMBER OF UNITS IN
+A SET TO 2
+***************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***************************************************
+SET MINIMUM NUMBER OF UNITS IN
+A SET TO 2
+***************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[LES(NO_UNITS,2)MOV(2,NO_UNITS);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[********************************************************
+SELECT DESIRED ORDER OF UNIT 
+SEQUENCE BASED ON LEAD LAG
+SWITCH SELECTIONS
+********************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************
+SELECT DESIRED ORDER OF UNIT 
+SEQUENCE BASED ON LEAD LAG
+SWITCH SELECTIONS
+********************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[MOV(LEADSELSW,UNIT_ORDER[0])MOV(LAG1SELSW,UNIT_ORDER[1])MOV(LAG2SELSW,UNIT_ORDER[2])MOV(LAG3SELSW,UNIT_ORDER[3])MOV(LAG4SELSW,UNIT_ORDER[4])MOV(LAG5SELSW,UNIT_ORDER[5]);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[*********************************************************
+DETERMINE NUMBER OF UNITS AVAILABLE
+*********************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*********************************************************
+DETERMINE NUMBER OF UNITS AVAILABLE
+*********************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIC(UNITS_AVLBL.1) MOV(1,NO_UNITS_AVAIL) ,XIC(UNITS_AVLBL.2) ADD(NO_UNITS_AVAIL,1,NO_UNITS_AVAIL) ,XIC(UNITS_AVLBL.3) ADD(NO_UNITS_AVAIL,1,NO_UNITS_AVAIL) ,XIC(UNITS_AVLBL.4) ADD(NO_UNITS_AVAIL,1,NO_UNITS_AVAIL) ,XIC(UNITS_AVLBL.5) ADD(NO_UNITS_AVAIL,1,NO_UNITS_AVAIL) ,XIC(UNITS_AVLBL.6) ADD(NO_UNITS_AVAIL,1,NO_UNITS_AVAIL) ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[************************************************************
+IF LEAD SELECT SWITCH IS SET TO ZERO
+ALTERNATE LEADS WITH LEAD ALTERNATE 
+AOI - SET ORDER BASED ON LAG SWITCHES
+ASSIGN THE DESIRED LEAD UNIT TO THE
+CHOICE NOT TAKEN BY LAG SWITCHES 
+************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[************************************************************
+IF LEAD SELECT SWITCH IS SET TO ZERO
+ALTERNATE LEADS WITH LEAD ALTERNATE 
+AOI - SET ORDER BASED ON LAG SWITCHES
+ASSIGN THE DESIRED LEAD UNIT TO THE
+CHOICE NOT TAKEN BY LAG SWITCHES 
+************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(LEADSELSW,0)OTE(ALT_SEL);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)EQU(NO_UNITS,2)SUB(3,LAG1SELSW,ALT_LEAD_ORDER);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)EQU(NO_UNITS,3)[ADD(LAG2SELSW,LAG1SELSW,ALT_LEAD_ORDER) ,SUB(6,ALT_LEAD_ORDER,ALT_LEAD_ORDER) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)EQU(NO_UNITS,4)[ADD(LAG2SELSW,LAG1SELSW,ALT_LEAD_ORDER) ,ADD(ALT_LEAD_ORDER,LAG3SELSW,ALT_LEAD_ORDER) ,SUB(10,ALT_LEAD_ORDER,ALT_LEAD_ORDER) ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)EQU(NO_UNITS,5)[ADD(LAG2SELSW,LAG1SELSW,ALT_LEAD_ORDER) ,ADD(ALT_LEAD_ORDER,LAG3SELSW,ALT_LEAD_ORDER) ,ADD(ALT_LEAD_ORDER,LAG4SELSW,ALT_LEAD_ORDER) ,SUB(15,ALT_LEAD_ORDER,ALT_LEAD_ORDER) ];]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)EQU(NO_UNITS,6)[ADD(LAG2SELSW,LAG1SELSW,ALT_LEAD_ORDER) ,ADD(ALT_LEAD_ORDER,LAG3SELSW,ALT_LEAD_ORDER) ,ADD(ALT_LEAD_ORDER,LAG4SELSW,ALT_LEAD_ORDER) ,ADD(ALT_LEAD_ORDER,LAG5SELSW,ALT_LEAD_ORDER) ,SUB(21,ALT_LEAD_ORDER,ALT_LEAD_ORDER) ];]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)MOV(ALT_LEAD_ORDER,UNIT_ORDER[0]);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Comment>
+<![CDATA[##########################################################
+FIND AVAILABLE UNIT NUMBERS
+##########################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[##########################################################
+FIND AVAILABLE UNIT NUMBERS
+##########################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[XIC(UNITS_AVLBL.1)MOV(1,UNIT_AVAIL[0]);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[XIC(UNITS_AVLBL.2)MOV(2,UNIT_AVAIL[1]);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[XIC(UNITS_AVLBL.3)MOV(3,UNIT_AVAIL[2]);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Text>
+<![CDATA[XIC(UNITS_AVLBL.4)MOV(4,UNIT_AVAIL[3]);]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[XIC(UNITS_AVLBL.5)MOV(5,UNIT_AVAIL[4]);]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[XIC(UNITS_AVLBL.6)MOV(6,UNIT_AVAIL[5]);]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Comment>
+<![CDATA[#############################
+PUT AVAILABLE UNITS 
+IN RUN ORDER
+############################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[#############################
+PUT AVAILABLE UNITS 
+IN RUN ORDER
+############################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Text>
+<![CDATA[MOV(0,AUO_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Text>
+<![CDATA[SUB(UNIT_ORDER[0],1,UA_SUB)MOV(UNIT_ORDER[0],AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Text>
+<![CDATA[NEQ(UNIT_AVAIL[UA_SUB],0)ADD(1,AUO_SUB,AUO_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[SUB(UNIT_ORDER[1],1,UA_SUB)MOV(UNIT_ORDER[1],AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[NEQ(UNIT_AVAIL[UA_SUB],0)ADD(1,AUO_SUB,AUO_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[SUB(UNIT_ORDER[2],1,UA_SUB)MOV(UNIT_ORDER[2],AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[NEQ(UNIT_AVAIL[UA_SUB],0)ADD(1,AUO_SUB,AUO_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Text>
+<![CDATA[SUB(UNIT_ORDER[3],1,UA_SUB)MOV(UNIT_ORDER[3],AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="33" Type="N">
+<Text>
+<![CDATA[NEQ(UNIT_AVAIL[UA_SUB],0)ADD(1,AUO_SUB,AUO_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="34" Type="N">
+<Text>
+<![CDATA[SUB(UNIT_ORDER[4],1,UA_SUB)MOV(UNIT_ORDER[4],AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="35" Type="N">
+<Text>
+<![CDATA[NEQ(UNIT_AVAIL[UA_SUB],0)ADD(1,AUO_SUB,AUO_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="36" Type="N">
+<Text>
+<![CDATA[SUB(UNIT_ORDER[5],1,UA_SUB)MOV(UNIT_ORDER[5],AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="37" Type="N">
+<Text>
+<![CDATA[EQU(UNIT_AVAIL[UA_SUB],0)MOV(0,AVAIL_UNIT_ORDER[AUO_SUB]);]]>
+</Text>
+</Rung>
+<Rung Number="38" Type="N">
+<Comment>
+<![CDATA[######################################
+CALL ALTERNATOR WHEN ALTERNATE
+CONDITION IS ON
+#####################################
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[######################################
+CALL ALTERNATOR WHEN ALTERNATE
+CONDITION IS ON
+#####################################
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="39" Type="N">
+<Text>
+<![CDATA[MOV(NO_UNITS_AVAIL,ES_AOI_UNIT_LD_ALT.NO_UNITS_AVAIL);]]>
+</Text>
+</Rung>
+<Rung Number="40" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)XIC(ALT_CALL)AOI_LD_ALT(ES_AOI_UNIT_LD_ALT,LD_PTR);]]>
+</Text>
+</Rung>
+<Rung Number="41" Type="N">
+<Text>
+<![CDATA[MOV(ES_AOI_UNIT_LD_ALT.LD_PTR,LD_PTR);]]>
+</Text>
+</Rung>
+<Rung Number="42" Type="N">
+<Comment>
+<![CDATA[########################################
+FOR LEAD SELECT IN ALTERNATE MODE
+ORDER STARTS BASED ON CURRENT LEAD
+########################################
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[########################################
+FOR LEAD SELECT IN ALTERNATE MODE
+ORDER STARTS BASED ON CURRENT LEAD
+########################################
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="43" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)MOV(LD_PTR,ALT_LD_SUB)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[0])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="44" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,NO_UNITS_AVAIL)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="45" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,NO_UNITS_AVAIL)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="46" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,NO_UNITS_AVAIL)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="47" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,NO_UNITS_AVAIL)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="48" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,NO_UNITS_AVAIL)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])MOV(0,ALT_LD_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="49" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)MOV(0,ALT_LD_SUB);]]>
+</Text>
+</Rung>
+<Rung Number="50" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,LD_PTR)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="51" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,LD_PTR)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="52" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,LD_PTR)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="53" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,LD_PTR)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="54" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)LES(ALT_LD_SUB,LD_PTR)MOV(AVAIL_UNIT_ORDER[ALT_LD_SUB],ALT_UNIT_ORDER[ALT_O_SUB])[ADD(ALT_LD_SUB,1,ALT_LD_SUB) ,ADD(ALT_O_SUB,1,ALT_O_SUB) ];]]>
+</Text>
+</Rung>
+<Rung Number="55" Type="N">
+<Comment>
+<![CDATA[##########################################################
+ASSIGN LEAD AND LAG UNITS TO AVAILABLE UNITS
+IN THE SEQUENCE ORDER
+##########################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[##########################################################
+ASSIGN LEAD AND LAG UNITS TO AVAILABLE UNITS
+IN THE SEQUENCE ORDER
+##########################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="56" Type="N">
+<Text>
+<![CDATA[XIO(ALT_SEL)[MOV(AVAIL_UNIT_ORDER[0],LEAD_UNIT) MOV(AVAIL_UNIT_ORDER[1],LAG1_UNIT) MOV(AVAIL_UNIT_ORDER[2],LAG2_UNIT) ,MOV(AVAIL_UNIT_ORDER[3],LAG3_UNIT) MOV(AVAIL_UNIT_ORDER[4],LAG4_UNIT) MOV(AVAIL_UNIT_ORDER[5],LAG5_UNIT) ];]]>
+</Text>
+</Rung>
+<Rung Number="57" Type="N">
+<Text>
+<![CDATA[XIC(ALT_SEL)[MOV(ALT_UNIT_ORDER[0],LEAD_UNIT) MOV(ALT_UNIT_ORDER[1],LAG1_UNIT) MOV(ALT_UNIT_ORDER[2],LAG2_UNIT) ,MOV(ALT_UNIT_ORDER[3],LAG3_UNIT) MOV(ALT_UNIT_ORDER[4],LAG4_UNIT) MOV(ALT_UNIT_ORDER[5],LAG5_UNIT) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="AddOnInstructionDefinition" Name="AOI_LD_ALT"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

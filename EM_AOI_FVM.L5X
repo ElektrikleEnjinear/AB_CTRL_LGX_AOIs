@@ -1,0 +1,1213 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--FULL VOLTAGE NON-REVERSING MOTOR MODULE
+-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="EM_AOI_FVM" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2018-10-18T18:13:43.675Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:40:31 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="EM_AOI_FVM" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2012-03-14T18:19:33.717Z" CreatedBy="FWY-RSTOOKKIT\apple" EditedDate="2018-10-18T18:13:43.675Z" EditedBy="PARAMETRIX\stokeart" SoftwareRevision="v29.00"
+>
+<Description>
+<![CDATA[FULL VOLTAGE NON-REVERSING MOTOR MODULE
+]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FULL VOLTAGE NON-REVERSING MOTOR MODULE
+]]>
+</LocalizedDescription>
+</Description>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="DI_MTR_RN" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR RUNNING FEEDBACK SIGNAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR RUNNING FEEDBACK SIGNAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_FLT_SGNL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR STARTER FAULT SIGNAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR STARTER FAULT SIGNAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_MTR_HOA_AUTO" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR MODE SIGNAL FOR REMOTE STATUS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR MODE SIGNAL FOR REMOTE STATUS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_MTR_HOA_HAND" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR MODE SIGNAL FOR LOCAL HAND OPERATION]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR MODE SIGNAL FOR LOCAL HAND OPERATION]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_COND2_SGNL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CONDITION 2 INPUT SIGNAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CONDITION 2 INPUT SIGNAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_COND1_SGNL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CONDITION 1 INPUT SIGNAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CONDITION 1 INPUT SIGNAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DO_PLC_STRT_CMD" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OUTPUT SIGNAL FROM PLC TO START MOTOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OUTPUT SIGNAL FROM PLC TO START MOTOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_PRVT_LMT_STRT" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OPTION TO PREVENT START OF MOTOR AT START PER HOUR LIMIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OPTION TO PREVENT START OF MOTOR AT START PER HOUR LIMIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PRMSV_1" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PERMISSIVE TO START MOTOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[PERMISSIVE TO START MOTOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PRMSV_2" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PERMISSIVE TO RUN MOTOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[PERMISSIVE TO RUN MOTOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_ALM_ACK_REQ" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM ACKNOWLEDGE REQUIRED TO CLEAR ALARM FROM PLC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM ACKNOWLEDGE REQUIRED TO CLEAR ALARM FROM PLC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_ALM_ACK" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM ACKNOWLEDGE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM ACKNOWLEDGE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_ALM_RESET" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM RESET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM RESET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_DSCR_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_FLT_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_COND1_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE CONDITION 1 ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE CONDITION 1 ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_COND2_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE CONDITION 2 ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE CONDITION 2 ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_DSCR_ALM_LTCH" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM RESET REQUIRED TO UNLATCH PLC ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM RESET REQUIRED TO UNLATCH PLC ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_COND1_ALM_LTCH" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<Description>
+<![CDATA[RESET OF CONDITION 1 ALARM REQUIRED TO CLEAR PLC ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET OF CONDITION 1 ALARM REQUIRED TO CLEAR PLC ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_COND2_ALM_LTCH" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[REQUIRE RESET TO CLEAR PLC COND 2 ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[REQUIRE RESET TO CLEAR PLC COND 2 ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_FLT_ALM_LTCH" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET OF FAULT ALARM REQUIRED TO CLEAR ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET OF FAULT ALARM REQUIRED TO CLEAR ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_MAN_STRT_CMD" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PLC_AUTO1_STRT_STP" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PLC_AUTO2_STRT_STP" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_DSCR_ALM_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_COND2_ALM_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CONDITION 2 ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CONDITION 2 ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_COND1_ALM_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CONDITION 1 ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CONDITION 1 ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_FLT_ALM_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_IN_AUTO" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR HOA IN REMOTE TO HMI]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR HOA IN REMOTE TO HMI]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_HOA_HND_IN" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[MOTOR HOA IN HAND TO HMI]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR HOA IN HAND TO HMI]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_STRT_LIM_WRN_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR STATUS IS AT START LIMIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR STATUS IS AT START LIMIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PMP_UNVLBL" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR IS UNAVAILABLE FOR PLC CONTROL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR IS UNAVAILABLE FOR PLC CONTROL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_IN_AUTO2_IND" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_IN_AUTO1_IND" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_IN_MAN_IND" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PMP_IS_RUN" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[HMI MOTOR IS RUNNING]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[HMI MOTOR IS RUNNING]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_AUTO_MAN_SEL" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_STRT_PR_HR" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALLOWABLE STARTS PER HOUR FOR MOTOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALLOWABLE STARTS PER HOUR FOR MOTOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[6]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="6"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_DSCR_ALM_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISCREPANCY ALARM DELAY IN mSEC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM DELAY IN mSEC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[10000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="10000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_FLT_ALM_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[HMI FAULT ALARM DELAY]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[HMI FAULT ALARM DELAY]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_DI_ALRM_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DELAY FOR DIGITAL SIGNAL ALARMS IN mSEC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DELAY FOR DIGITAL SIGNAL ALARMS IN mSEC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[1000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="1000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_MOTOR_AMPS" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MOTOR AMPS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MOTOR AMPS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="ALM_DSCR" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[DISCREPANCY ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALM_FLT" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[FAULT ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FAULT ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALM_NO_1" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[CONDITION 1 ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CONDITION 1 ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALM_NO_2" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[CONDITION 2 ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CONDITION 2 ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="TMR_BTWN_STRT" DataType="TIMER" ExternalAccess="None">
+<Description>
+<![CDATA[TIMER FOR ALLOWED TIME BETWEEN MOTOR STARTS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TIMER FOR ALLOWED TIME BETWEEN MOTOR STARTS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="CTR_MTR_STRTS" DataType="COUNTER" ExternalAccess="None">
+<Description>
+<![CDATA[START LIMIT COUNTER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[START LIMIT COUNTER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,2,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ONESHOT" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_STOP_CMD" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[CALL FOR STOP OF RUNNING MOTOR FROM LOGIC COMMAND]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CALL FOR STOP OF RUNNING MOTOR FROM LOGIC COMMAND]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_DISCR_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_FLT_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_COND_1_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE CONDITION 1 ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE CONDITION 1 ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_COND_2_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE OVER TEMP ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE OVER TEMP ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_STRT_CMD" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ONS_FVM_LGC" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[#################################################################################
+CONTROL START/STOP OF A FVNR MOTOR AND MONITOR MOTOR STATUSES
+DETERMINE START LIMITS, DISCREPANCY ALARM STATUS, RUN TIMES, AND OTHER STATUSES.
+################################################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[#################################################################################
+CONTROL START/STOP OF A FVNR MOTOR AND MONITOR MOTOR STATUSES
+DETERMINE START LIMITS, DISCREPANCY ALARM STATUS, RUN TIMES, AND OTHER STATUSES.
+################################################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[*******************************************************************
+MOTOR RUN STATUS FOR HMI
+*******************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*******************************************************************
+MOTOR RUN STATUS FOR HMI
+*******************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(DI_MTR_RN)OTE(B_PMP_IS_RUN);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[*************************************************************************************************
+START  LIMIT LOGIC
+
+CALCULATE SET POINT FOR TIMER TO CALCULATE START LIMIT TIME
+***************************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************************************************************
+START  LIMIT LOGIC
+
+CALCULATE SET POINT FOR TIMER TO CALCULATE START LIMIT TIME
+***************************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[GRT(HMI_STRT_PR_HR,0)DIV(3600000,HMI_STRT_PR_HR,TMR_BTWN_STRT.PRE);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[********************************************************************
+OUTPUT TIMER PULSE FOR EACH ALLOWABLE
+START TIME PERIOD
+********************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************
+OUTPUT TIMER PULSE FOR EACH ALLOWABLE
+START TIME PERIOD
+********************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(TMR_BTWN_STRT.DN)TON(TMR_BTWN_STRT,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[**************************************************************************************
+USED A COUNTER TO COUNT UP MOTOR STARTS 
+AND COUNT DOWN FOR ALLOWABLE START INTERVALS.
+STARTS ARE TOO FREQUENT IF COUNTER REACHES 2
+**************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[**************************************************************************************
+USED A COUNTER TO COUNT UP MOTOR STARTS 
+AND COUNT DOWN FOR ALLOWABLE START INTERVALS.
+STARTS ARE TOO FREQUENT IF COUNTER REACHES 2
+**************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(DI_MTR_RN)ONS(ONESHOT.0)CTU(CTR_MTR_STRTS,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(TMR_BTWN_STRT.DN)GRT(CTR_MTR_STRTS.ACC,0)CTD(CTR_MTR_STRTS,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+SET HMI MOTOR REMOTE STATUS BASED ON SWITCH INPUT STATUS
+***********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+SET HMI MOTOR REMOTE STATUS BASED ON SWITCH INPUT STATUS
+***********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(DI_MTR_HOA_AUTO)OTE(B_IN_AUTO);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+SET HMI MOTOR LOCAL HAND STATUS BASED ON SWITCH INPUT STATUS
+***********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+SET HMI MOTOR LOCAL HAND STATUS BASED ON SWITCH INPUT STATUS
+***********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(DI_MTR_HOA_HAND)OTE(B_HMI_HOA_HND_IN);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[************************************************************************************
+DETERMINE MOTOR OPERATING MODE FROM HMI AUTO/MANUAL SELECTOR
+VALUE (0 = MANUAL, 1 = AUTO1, 2 = AUTO2, 3 = AUTO3 ...)
+
+THIS ALLOWS THE EQUIPMENT TO BE CONTROLLED MANUALLY (0) OR 
+BY SEVERAL (1-9) DIFFERENT AVAILABLE MODES OF AUTOMATIC CONTROL
+NOTE: ADD MORE RUNGS FOR ADDITIONAL AUTO MODES OF CONTROL
+*************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[************************************************************************************
+DETERMINE MOTOR OPERATING MODE FROM HMI AUTO/MANUAL SELECTOR
+VALUE (0 = MANUAL, 1 = AUTO1, 2 = AUTO2, 3 = AUTO3 ...)
+
+THIS ALLOWS THE EQUIPMENT TO BE CONTROLLED MANUALLY (0) OR 
+BY SEVERAL (1-9) DIFFERENT AVAILABLE MODES OF AUTOMATIC CONTROL
+NOTE: ADD MORE RUNGS FOR ADDITIONAL AUTO MODES OF CONTROL
+*************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(HMI_AUTO_MAN_SEL,0)OTE(B_IN_MAN_IND);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[EQU(HMI_AUTO_MAN_SEL,1)OTE(B_IN_AUTO1_IND);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[EQU(HMI_AUTO_MAN_SEL,2)OTE(B_IN_AUTO2_IND);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[****************************************************************************************************
+MOTOR ALARMS
+****************************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[****************************************************************************************************
+MOTOR ALARMS
+****************************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[*****************************************************
+DISCREPANCY ALARM
+RUN AND CALL STATUS DO NOT AGREE
+******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************
+DISCREPANCY ALARM
+RUN AND CALL STATUS DO NOT AGREE
+******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_DSCR_ALM_DSBL)[CPT(ALM_DSCR.MinDurationPRE,HMI_DSCR_ALM_DLY*1000) ,XIC(B_ALM_ACK_REQ) OTE(ALM_DSCR.AckRequired) ,XIC(HMI_DSCR_ALM_LTCH) OTE(ALM_DSCR.Latched) ,OTE(B_ENBL_DISCR_ALM) ,[[XIC(DO_PLC_STRT_CMD) ,XIC(DI_MTR_HOA_HAND) ] XIO(DI_MTR_RN) ,XIO(DO_PLC_STRT_CMD) XIO(DI_MTR_HOA_HAND) XIC(DI_MTR_RN) ] ALMD(ALM_DSCR,B_ALM_ACK,B_ALM_RESET,HMI_DSCR_ALM_DSBL,B_ENBL_DISCR_ALM) ,XIC(ALM_DSCR.InAlarm) OTE(B_DSCR_ALM_ON) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Comment>
+<![CDATA[*****************************************************
+FAULT ALARM
+MOTOR FAULT INPUT TRIPPED
+******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************
+FAULT ALARM
+MOTOR FAULT INPUT TRIPPED
+******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_FLT_ALM_DSBL)[CPT(ALM_FLT.MinDurationPRE,HMI_FLT_ALM_DLY*1000) ,XIC(B_ALM_ACK_REQ) OTE(ALM_FLT.AckRequired) ,XIC(HMI_FLT_ALM_LTCH) OTE(ALM_FLT.Latched) ,OTE(B_ENBL_FLT_ALM) ,XIC(DI_FLT_SGNL) ALMD(ALM_FLT,B_ALM_ACK,B_ALM_RESET,HMI_FLT_ALM_DSBL,B_ENBL_FLT_ALM) ,XIC(ALM_FLT.InAlarm) OTE(B_FLT_ALM_ON) ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Comment>
+<![CDATA[*****************************************************
+CONDITION 1 ALARM
+MOTOR CONDITION 1 INPUT TRIPPED
+******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************
+CONDITION 1 ALARM
+MOTOR CONDITION 1 INPUT TRIPPED
+******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_COND1_ALM_DSBL)[CPT(ALM_NO_1.MinDurationPRE,HMI_FLT_ALM_DLY*1000) ,XIC(B_ALM_ACK_REQ) OTE(ALM_NO_1.AckRequired) ,XIC(HMI_COND1_ALM_LTCH) OTE(ALM_NO_1.Latched) ,OTE(B_ENBL_COND_1_ALM) ,XIC(DI_COND1_SGNL) ALMD(ALM_NO_1,B_ALM_ACK,B_ALM_RESET,HMI_COND1_ALM_DSBL,B_ENBL_COND_1_ALM) ,XIC(ALM_NO_1.InAlarm) OTE(B_COND1_ALM_ON) ];]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Comment>
+<![CDATA[*****************************************************
+CONDITION 2 ALARM
+MOTOR OVER TEMP INPUT TRIPPED
+******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************
+CONDITION 2 ALARM
+MOTOR OVER TEMP INPUT TRIPPED
+******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_COND2_ALM_DSBL)[CPT(ALM_NO_2.MinDurationPRE,HMI_FLT_ALM_DLY*1000) ,XIC(B_ALM_ACK_REQ) OTE(ALM_NO_2.AckRequired) ,XIC(HMI_COND2_ALM_LTCH) OTE(ALM_NO_2.Latched) ,OTE(B_ENBL_COND_2_ALM) ,XIC(DI_COND2_SGNL) ALMD(ALM_NO_2,B_ALM_ACK,B_ALM_RESET,HMI_COND2_ALM_DSBL,B_ENBL_COND_2_ALM) ,XIC(ALM_NO_2.InAlarm) OTE(B_COND2_ALM_ON) ];]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+DETERMINE IF MOTOR IS UNAVAILABLE FOR PLC CONTROL
+THE MOTOR IS NOT AVAILABLE IF
+IT IS NOT IN REMOTE
+IT IS NOT RUNNING AND HAS A MOISTURE ALARM
+IT HAS A FAULT, OVER TEMP, OR DISCREPANCY ALARM
+ITS RUN PERMISSIVE IS OFF
+IT IS NOT RUNNING AND ITS START PERMISSIVE IS OFF
+IT IS START LIMITED AND THE FILTER IS SET TO PREVENT A START
+***********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+DETERMINE IF MOTOR IS UNAVAILABLE FOR PLC CONTROL
+THE MOTOR IS NOT AVAILABLE IF
+IT IS NOT IN REMOTE
+IT IS NOT RUNNING AND HAS A MOISTURE ALARM
+IT HAS A FAULT, OVER TEMP, OR DISCREPANCY ALARM
+ITS RUN PERMISSIVE IS OFF
+IT IS NOT RUNNING AND ITS START PERMISSIVE IS OFF
+IT IS START LIMITED AND THE FILTER IS SET TO PREVENT A START
+***********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIO(DI_MTR_HOA_AUTO) ,XIO(DI_MTR_RN) XIC(B_COND1_ALM_ON) ,XIC(B_COND2_ALM_ON) ,XIC(B_DSCR_ALM_ON) ,XIC(B_FLT_ALM_ON) ,XIO(B_PRMSV_2) ,XIO(DI_MTR_RN) XIO(B_PRMSV_1) ,XIO(DI_MTR_RN) XIC(HMI_PRVT_LMT_STRT) XIC(B_STRT_LIM_WRN_ON) ]OTE(B_PMP_UNVLBL);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+@@@@@@@@@   EQUIPMENT MODULE DISCRETE CONTROL LOGIC   @@@@@@@@@
+
+CONTROL START FOR MOTOR FROM HMI OR PLC WHEN IT IS AVAILABLE
+IF FVM IS IN MANUAL MODE - START REQUEST IS DONE FROM THE HMI
+IF FVM IS IN AUTO 1 MODE - START REQUEST IS DONE FROM THE AUTO 1 STRATEGY
+IF FVM IS IN AUTO 2 MODE - START REQUEST IS DONE FROM THE AUTO 2 STRATEGY
+NOTE: IF OTHER AUTO MODES ARE REQUIRED THEY CAN BE ADDED
+
+NOTE: DEPENDING ON THE VENDOR REQUIREMENTS FOR START/STOP LOGIC
+THIS SECTION MAY NEED TO BE MODIFIED TO ACCOMODATE THE HARDWARE
+***********************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+@@@@@@@@@   EQUIPMENT MODULE DISCRETE CONTROL LOGIC   @@@@@@@@@
+
+CONTROL START FOR MOTOR FROM HMI OR PLC WHEN IT IS AVAILABLE
+IF FVM IS IN MANUAL MODE - START REQUEST IS DONE FROM THE HMI
+IF FVM IS IN AUTO 1 MODE - START REQUEST IS DONE FROM THE AUTO 1 STRATEGY
+IF FVM IS IN AUTO 2 MODE - START REQUEST IS DONE FROM THE AUTO 2 STRATEGY
+NOTE: IF OTHER AUTO MODES ARE REQUIRED THEY CAN BE ADDED
+
+NOTE: DEPENDING ON THE VENDOR REQUIREMENTS FOR START/STOP LOGIC
+THIS SECTION MAY NEED TO BE MODIFIED TO ACCOMODATE THE HARDWARE
+***********************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(B_PMP_UNVLBL)[XIC(B_IN_MAN_IND) XIO(B_IN_AUTO1_IND) XIO(B_IN_AUTO2_IND) XIC(HMI_MAN_STRT_CMD) ,XIO(B_IN_MAN_IND) XIC(B_IN_AUTO1_IND) XIO(B_IN_AUTO2_IND) XIC(B_PLC_AUTO1_STRT_STP) ,XIO(B_IN_MAN_IND) XIO(B_IN_AUTO1_IND) XIC(B_IN_AUTO2_IND) XIC(B_PLC_AUTO2_STRT_STP) ]OTE(B_STRT_CMD);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+TWO DIGITAL OUTPUTS ARE SUPPLIED IF ONLY ONE IS REQURIED BY THE 
+VARIABLE SPEED DRIVE THEN USE ONLY THE START COMMAND BIT
+***********************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+TWO DIGITAL OUTPUTS ARE SUPPLIED IF ONLY ONE IS REQURIED BY THE 
+VARIABLE SPEED DRIVE THEN USE ONLY THE START COMMAND BIT
+***********************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(B_STRT_CMD)ONS(ONS_FVM_LGC.0)OTL(DO_PLC_STRT_CMD);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+CONTROL STOP FOR MOTOR FROM HMI OR PLC OR WHEN NOT AVAILABLE FOR CONTROL
+IF FVM IS IN MANUAL MODE - STOP REQUEST IS DONE FROM THE HMI
+IF FVM IS IN AUTO 1 MODE - STOP REQUEST IS DONE FROM THE AUTO 1 STRATEGY
+IF FVM IS IN AUTO 2 MODE - STOP REQUEST IS DONE FROM THE AUTO 2 STRATEGY
+NOTE: IF OTHER AUTO MODES ARE REQUIRED THEY CAN BE ADDED
+***********************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+CONTROL STOP FOR MOTOR FROM HMI OR PLC OR WHEN NOT AVAILABLE FOR CONTROL
+IF FVM IS IN MANUAL MODE - STOP REQUEST IS DONE FROM THE HMI
+IF FVM IS IN AUTO 1 MODE - STOP REQUEST IS DONE FROM THE AUTO 1 STRATEGY
+IF FVM IS IN AUTO 2 MODE - STOP REQUEST IS DONE FROM THE AUTO 2 STRATEGY
+NOTE: IF OTHER AUTO MODES ARE REQUIRED THEY CAN BE ADDED
+***********************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIC(B_IN_MAN_IND) XIO(B_IN_AUTO1_IND) XIO(B_IN_AUTO2_IND) XIO(HMI_MAN_STRT_CMD) ,XIO(B_IN_MAN_IND) XIC(B_IN_AUTO1_IND) XIO(B_IN_AUTO2_IND) XIO(B_PLC_AUTO1_STRT_STP) ,XIO(B_IN_MAN_IND) XIO(B_IN_AUTO1_IND) XIC(B_IN_AUTO2_IND) XIO(B_PLC_AUTO2_STRT_STP) ,XIC(B_PMP_UNVLBL) ][OTE(B_STOP_CMD) ,OTU(HMI_MAN_STRT_CMD) ];]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+TWO DIGITAL OUTPUTS ARE SUPPLIED IF ONLY ONE IS REQURIED BY THE 
+VARIABLE SPEED DRIVE THEN USE ONLY THE START COMMAND BIT
+***********************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+TWO DIGITAL OUTPUTS ARE SUPPLIED IF ONLY ONE IS REQURIED BY THE 
+VARIABLE SPEED DRIVE THEN USE ONLY THE START COMMAND BIT
+***********************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(B_STOP_CMD)ONS(ONS_FVM_LGC.1)OTU(DO_PLC_STRT_CMD);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+DISCRETE START/STOP TRACKING LOGIC FOR MANUAL MODE
+
+IF MANUAL MODE IS ACTIVE THEN SKIP MANUAL TRACKING FUNCTION RUNG
+
+WHEN THE EQUIMENT IS AVAILABLE FOR CONTROL AND NOT IN MANUAL MODE 
+THE RUNNING STATUS FRO MTHE FIELD IS MOVED INTO THE B_FVM_MAN_STRT_STP 
+DISCRETE ALLOWING FOR BUMPLESS TRANSFER
+FROM THE OTHER MODES OF CONTROL
+***********************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+DISCRETE START/STOP TRACKING LOGIC FOR MANUAL MODE
+
+IF MANUAL MODE IS ACTIVE THEN SKIP MANUAL TRACKING FUNCTION RUNG
+
+WHEN THE EQUIMENT IS AVAILABLE FOR CONTROL AND NOT IN MANUAL MODE 
+THE RUNNING STATUS FRO MTHE FIELD IS MOVED INTO THE B_FVM_MAN_STRT_STP 
+DISCRETE ALLOWING FOR BUMPLESS TRANSFER
+FROM THE OTHER MODES OF CONTROL
+***********************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(B_IN_MAN_IND)JMP(SKIP_MAN_TRK);]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[XIO(B_PMP_UNVLBL)XIO(B_IN_MAN_IND)[XIC(DI_MTR_RN) OTL(HMI_MAN_STRT_CMD) ,XIO(DI_MTR_RN) OTU(HMI_MAN_STRT_CMD) ];]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Comment>
+<![CDATA[******************************************************************************************************************
+CONTROL ANALOG SIGNAL TO VSD BASED ON SELECTED MOTOR MODES
+WHEN IN REMOTE - HMI HAND SET MANUAL SPEED OUT TO VSD
+SET STATUS OUT TO MANUAL FOR THIS CONDITION PLUS HMI OFF OR NOT IN REMOTE
+WHEN IN REMOTE HMI AUTO PASS ANALOG CONTROL SIGNAL TO ANALOG OUTPUT
+******************************************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[******************************************************************************************************************
+CONTROL ANALOG SIGNAL TO VSD BASED ON SELECTED MOTOR MODES
+WHEN IN REMOTE - HMI HAND SET MANUAL SPEED OUT TO VSD
+SET STATUS OUT TO MANUAL FOR THIS CONDITION PLUS HMI OFF OR NOT IN REMOTE
+WHEN IN REMOTE HMI AUTO PASS ANALOG CONTROL SIGNAL TO ANALOG OUTPUT
+******************************************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[LBL(SKIP_MAN_TRK)NOP();]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Comment>
+<![CDATA[########################################################################
+@@@@@@   END OF FVM LOGIC   @@@@@@
+########################################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[########################################################################
+@@@@@@   END OF FVM LOGIC   @@@@@@
+########################################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[TND();]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

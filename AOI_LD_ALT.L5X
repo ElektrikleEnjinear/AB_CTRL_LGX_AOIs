@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="AOI_LD_ALT" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2013-02-22T00:47:45.691Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:39:15 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="AOI_LD_ALT" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2010-06-16T16:41:26.349Z" CreatedBy="KJ\DaveW" EditedDate="2013-02-22T00:47:45.691Z" EditedBy="SOPHIA\SCADA2" SoftwareRevision="v19.01"
+>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only"/>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only"/>
+<Parameter Name="LD_PTR" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="true" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="NO_UNITS_AVAIL" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[###################################################################
+Lead_Alternate
+When this instruction is called, point to the next equipment unit to be lead.
+Routine handles up to 6 equipment units in a set. (Modify if more are needed.)
+###################################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[###################################################################
+Lead_Alternate
+When this instruction is called, point to the next equipment unit to be lead.
+Routine handles up to 6 equipment units in a set. (Modify if more are needed.)
+###################################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[ADD(LD_PTR,1,LD_PTR);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[GEQ(LD_PTR,NO_UNITS_AVAIL)MOV(0,LD_PTR);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

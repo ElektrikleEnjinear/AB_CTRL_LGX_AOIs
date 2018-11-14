@@ -1,0 +1,1283 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--LADDER FLOW TOTALIZER-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="ES_AOI_FLW_TOT" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2018-10-18T13:56:49.316Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:40:55 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Name="ES_AOI_WALL_CLOCK" Revision="1.1" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2007-02-16T18:31:33.480Z" CreatedBy="Not Available" EditedDate="2012-11-06T17:43:27.870Z" EditedBy="FWY-RSTOOKKIT\apple" SoftwareRevision="v19.01">
+<Description>
+<![CDATA[WALL CLOCK SET TIME, CURRENT TIME, AND RESET BITS.]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[WALL CLOCK SET TIME, CURRENT TIME, AND RESET BITS.]]>
+</LocalizedDescription>
+</Description>
+<RevisionNote>
+<![CDATA[SIMPLIFIED DAY OF WEEK CALC AND REMOVED UNNEEDED REGISTERS AS A RESULT.]]>
+<LocalizedRevisionNote Lang="en-US">
+<![CDATA[SIMPLIFIED DAY OF WEEK CALC AND REMOVED UNNEEDED REGISTERS AS A RESULT.]]>
+</LocalizedRevisionNote>
+</RevisionNote>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="B_CMD_SET_TIME" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SET THE DATE AND TIME BIT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SET THE DATE AND TIME BIT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_SET_YEAR" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[YEAR TO SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[YEAR TO SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_SET_MONTH" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MONTH TO SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MONTH TO SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_SET_DAY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DAY TO SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DAY TO SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_SET_HOUR" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HOUR TO SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[HOUR TO SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_SET_MINUTE" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MINUTE TO SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MINUTE TO SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_SET_SECOND" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SECOND TO SET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SECOND TO SET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_CURRENT_YR" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[CURRENT YEAR FROM PLC CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CURRENT YEAR FROM PLC CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_CURRENT_MO" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[CURRENT MONTH FROM PLC CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CURRENT MONTH FROM PLC CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_CURRENT_DAY" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[CURRENT DAY FROM PLC CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CURRENT DAY FROM PLC CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_CURRENT_HR" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[CURRENT HOUR FROM PLC CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CURRENT HOUR FROM PLC CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_CURRENT_MIN" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[CURRENT MINUTE FROM PLC CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CURRENT MINUTE FROM PLC CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_CURRENT_SEC" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[CURRENT SECOND FROM PLC CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CURRENT SECOND FROM PLC CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_VAL_DAY_OF_WK" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[DAY OF WEEK FROM PLC CLOCK
+ 0 = SUN, 1=MON, 2=TUES, 3=WED, 4=THUR, 5=FRI 6=SAT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DAY OF WEEK FROM PLC CLOCK
+ 0 = SUN, 1=MON, 2=TUES, 3=WED, 4=THUR, 5=FRI 6=SAT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_STS_HRLY_RESET" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[HOURLY RESET SIGNAL FROM CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[HOURLY RESET SIGNAL FROM CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_STS_DAILY_RESET" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[DAILY RESET SIGNAL FROM CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DAILY RESET SIGNAL FROM CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_STS_MONTHLY_RESET" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[MONTHLY RESET SIGNAL FROM CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MONTHLY RESET SIGNAL FROM CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_STS_YRLY_RESET" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[YEARLY RESET SIGNAL FROM CLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[YEARLY RESET SIGNAL FROM CLOCK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="D_WRK_SET_DATE_TIME" DataType="DINT" Dimensions="7" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DATA ARRAY USED TO SET WALL CLOCK TIME]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DATA ARRAY USED TO SET WALL CLOCK TIME]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="7" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="D_WRK_GET_DATE_TIME" DataType="DINT" Dimensions="7" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESULT OF GSV TO WALL CLOCK TIME -- INPUT TO DAY OF WEEK CALCULATION]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESULT OF GSV TO WALL CLOCK TIME -- INPUT TO DAY OF WEEK CALCULATION]]>
+</LocalizedDescription>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[Year]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Year]]>
+</LocalizedComment>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[Month]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Month]]>
+</LocalizedComment>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[Day]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Day]]>
+</LocalizedComment>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[Hour]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Hour]]>
+</LocalizedComment>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[Minute]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Minute]]>
+</LocalizedComment>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[Second]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Second]]>
+</LocalizedComment>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[Microsecond]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[Microsecond]]>
+</LocalizedComment>
+</Comment>
+</Comments>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="7" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="D_WRK_G" DataType="DINT" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FUNCTION OF YEAR AND MONTH USED TO CALCULATE DAY OF WEEK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FUNCTION OF YEAR AND MONTH USED TO CALCULATE DAY OF WEEK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="D_WRK_F" DataType="DINT" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FUNCTION OF MONTH USED TO CALCULATE DAY OF WEEK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FUNCTION OF MONTH USED TO CALCULATE DAY OF WEEK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_WRK_DAY_ONS" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT DAILY PULSE OUTPUT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ONE SHOT DAILY PULSE OUTPUT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_WRK_HOUR_ONS" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT HOURLY PULSE OUTPUT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ONE SHOT HOURLY PULSE OUTPUT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_WRK_MONTH_ONS" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT MONTHLY PULSE OUTPUT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ONE SHOT MONTHLY PULSE OUTPUT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_WRK_YEAR_ONS" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT YEARLY PULSE OUTPUT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ONE SHOT YEARLY PULSE OUTPUT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[============================================================
+ES_AOI_WALLCLOCK:  CONTROLLER CLOCK HANDLER
+============================================================
+MOD 2009-03-24, DER FROM ROCKWELL WEB SITE
+
+==]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[============================================================
+ES_AOI_WALLCLOCK:  CONTROLLER CLOCK HANDLER
+============================================================
+MOD 2009-03-24, DER FROM ROCKWELL WEB SITE
+
+==]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[MOV(D_SET_YEAR,D_WRK_SET_DATE_TIME[0]) ,MOV(D_SET_MONTH,D_WRK_SET_DATE_TIME[1]) ,MOV(D_SET_DAY,D_WRK_SET_DATE_TIME[2]) ,MOV(D_SET_HOUR,D_WRK_SET_DATE_TIME[3]) ,MOV(D_SET_MINUTE,D_WRK_SET_DATE_TIME[4]) ,MOV(D_SET_SECOND,D_WRK_SET_DATE_TIME[5]) ,MOV(0,D_WRK_SET_DATE_TIME[6]) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[use local since date time already has time zone info]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[use local since date time already has time zone info]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(B_CMD_SET_TIME)OTU(B_CMD_SET_TIME)SSV(WALLCLOCKTIME,,LocalDateTime,D_WRK_SET_DATE_TIME[0]);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[============================================================
+GET CURRENT DATE / TIME
+============================================================
+
+Get the Controller's real time clock broken down by Year, month, day...seconds
+and store in a tag so t]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[============================================================
+GET CURRENT DATE / TIME
+============================================================
+
+Get the Controller's real time clock broken down by Year, month, day...seconds
+and store in a tag so t]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[GSV(WALLCLOCKTIME,,LocalDateTime,D_WRK_GET_DATE_TIME[0]) ,MOV(D_WRK_GET_DATE_TIME[0],D_VAL_CURRENT_YR) ,MOV(D_WRK_GET_DATE_TIME[1],D_VAL_CURRENT_MO) ,MOV(D_WRK_GET_DATE_TIME[2],D_VAL_CURRENT_DAY) ,MOV(D_WRK_GET_DATE_TIME[3],D_VAL_CURRENT_HR) ,MOV(D_WRK_GET_DATE_TIME[4],D_VAL_CURRENT_MIN) ,MOV(D_WRK_GET_DATE_TIME[5],D_VAL_CURRENT_SEC) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[============================================================
+CALCULATE THE DAY OF THE WEEK
+============================================================
+This version of the day of the week is based on:
+
+http://alcor.concordia.ca/~gpkatch/gdate-algorit]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[============================================================
+CALCULATE THE DAY OF THE WEEK
+============================================================
+This version of the day of the week is based on:
+
+http://alcor.concordia.ca/~gpkatch/gdate-algorit]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[CPT(D_WRK_F,(D_WRK_GET_DATE_TIME[1]+9)MOD 12)CPT(D_WRK_G,D_WRK_GET_DATE_TIME[0]-(D_WRK_F/10));]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This rung calculates the remainder of the algorithm.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The "Day Number" is calculated, and the MOD 7
+(remainder after division by 7) is stored as the Day of the Week.
+
+NOTE:  The "+2" offset aligns Val_DayOfWeek as:
+0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This rung calculates the remainder of the algorithm.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The "Day Number" is calculated, and the MOD 7
+(remainder after division by 7) is stored as the Day of the Week.
+
+NOTE:  The "+2" offset aligns Val_DayOfWeek as:
+0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[CPT(D_VAL_DAY_OF_WK,(365*D_WRK_G+(D_WRK_G/4)-(D_WRK_G/100)+(D_WRK_G/400)+((D_WRK_F*306+5)/10)+D_WRK_GET_DATE_TIME[2]+2)MOD 7);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[============================================================
+RESET PULSE OUTPUTS
+============================================================
+
+These rungs generate one-shot outputs once hourly, daily, monthly and yearly.]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[============================================================
+RESET PULSE OUTPUTS
+============================================================
+
+These rungs generate one-shot outputs once hourly, daily, monthly and yearly.]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(D_WRK_GET_DATE_TIME[4],0)EQU(D_WRK_GET_DATE_TIME[5],0)ONS(B_WRK_HOUR_ONS)OTE(B_STS_HRLY_RESET);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[EQU(D_WRK_GET_DATE_TIME[3],0)EQU(D_WRK_GET_DATE_TIME[4],0)EQU(D_WRK_GET_DATE_TIME[5],0)ONS(B_WRK_DAY_ONS)OTE(B_STS_DAILY_RESET);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[EQU(D_WRK_GET_DATE_TIME[2],1)EQU(D_WRK_GET_DATE_TIME[3],0)EQU(D_WRK_GET_DATE_TIME[4],0)EQU(D_WRK_GET_DATE_TIME[5],0)ONS(B_WRK_MONTH_ONS)OTE(B_STS_MONTHLY_RESET);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[EQU(D_WRK_GET_DATE_TIME[1],1)EQU(D_WRK_GET_DATE_TIME[2],1)EQU(D_WRK_GET_DATE_TIME[3],0)EQU(D_WRK_GET_DATE_TIME[4],0)EQU(D_WRK_GET_DATE_TIME[5],0)ONS(B_WRK_YEAR_ONS)OTE(B_STS_YRLY_RESET);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Use="Target" Name="ES_AOI_FLW_TOT" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2012-12-05T22:24:07.280Z" CreatedBy="FWY-RSTOOKKIT\apple" EditedDate="2018-10-18T13:56:49.316Z" EditedBy="PARAMETRIX\stokeart" SoftwareRevision="v29.00"
+>
+<Description>
+<![CDATA[LADDER FLOW TOTALIZER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LADDER FLOW TOTALIZER]]>
+</LocalizedDescription>
+</Description>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="B_RESET_FLW_TOT" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET RUNNING TOTAL REGISTERS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET RUNNING TOTAL REGISTERS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_DAILY_RESET" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET DAILY RUN TIME REGISTERS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET DAILY RUN TIME REGISTERS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_YRLY_RESET" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET YEARLY RUN TIME REGISTERS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET YEARLY RUN TIME REGISTERS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_PROG_STRT_REQ" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[START TOTALIZER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[START TOTALIZER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_TOT_MIN_VAL" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TOTAL MINIMUM GALLONS BEFORE TOTALIZATION WILL WORK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TOTAL MINIMUM GALLONS BEFORE TOTALIZATION WILL WORK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="FLOW_EU" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FLOW SIGNAL
+(GALLONS/MINUTE)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FLOW SIGNAL
+(GALLONS/MINUTE)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="CD_FLW_UNITS" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FLOW SIGNAL UNITS: 
+0 = GPM; 1 = MGD]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FLOW SIGNAL UNITS: 
+0 = GPM; 1 = MGD]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="CD_TOT_UNITS" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TOTAL OUTPUT UNITS:
+0 = KGAL, 1 = MGAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TOTAL OUTPUT UNITS:
+0 = KGAL, 1 = MGAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_DILY_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[TOTAL TODAY]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TOTAL TODAY]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_YEST_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[YESTERDAY TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[YESTERDAY TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_MTHLY_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MONTHLY TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MONTHLY TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_LST_MNTH_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[LAST MONTH TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LAST MONTH TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_YRLY_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[THIS YEAR TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[THIS YEAR TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_LST_YR_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[LAST YEAR TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LAST YEAR TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_RUN_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[RUNNING TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RUNNING TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_LST_RUN_TOT" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[PREVIOUS RUNNING TOTAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[PREVIOUS RUNNING TOTAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="ONESHOT" DataType="DINT" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_RUN_TOT" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RUN TOTALIZER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RUN TOTALIZER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_CLC_FLW_SGNL" DataType="REAL" Radix="Float" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FLOW SIGNAL (KILO-GALLONS) USED FOR SECOND BY SECOND CALCULATIONS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FLOW SIGNAL (KILO-GALLONS) USED FOR SECOND BY SECOND CALCULATIONS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_CLC_FLW_TOT" DataType="REAL" Radix="Float" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CALC FLOW TOTAL
+GALLONS TOTALLED TODAY CALCULATED BY THE SECOND]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CALC FLOW TOTAL
+GALLONS TOTALLED TODAY CALCULATED BY THE SECOND]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_JMP_END" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[END OF JUMP]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[END OF JUMP]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="TOTAL_CLOCK" DataType="ES_AOI_WALL_CLOCK" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[1,0,0,0,0,0,0,0,0,0,0,0,0,0,[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="ES_AOI_WALL_CLOCK">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+<DataValueMember Name="B_CMD_SET_TIME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D_SET_YEAR" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_SET_MONTH" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_SET_DAY" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_SET_HOUR" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_SET_MINUTE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_SET_SECOND" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_CURRENT_YR" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_CURRENT_MO" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_CURRENT_DAY" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_CURRENT_HR" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_CURRENT_MIN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_CURRENT_SEC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="D_VAL_DAY_OF_WK" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="B_STS_HRLY_RESET" DataType="BOOL" Value="0"/>
+<DataValueMember Name="B_STS_DAILY_RESET" DataType="BOOL" Value="0"/>
+<DataValueMember Name="B_STS_MONTHLY_RESET" DataType="BOOL" Value="0"/>
+<DataValueMember Name="B_STS_YRLY_RESET" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="D_VAL_DAY_STORE" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="D_VAL_MNTH_STORE" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="D_VAL_YR_STORE" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_CLC_RUN_TOT" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_CLC_DILY_TOT" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_CLC_MTHLY_TOT" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_CLC_YRLY_TOT" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[###################################################
+FLOW TOTALIZER.
+PUT THE AOI IN A ONE SEC (1000 MS) PERIODIC TASK
+ 
+###################################################
+
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[###################################################
+FLOW TOTALIZER.
+PUT THE AOI IN A ONE SEC (1000 MS) PERIODIC TASK
+ 
+###################################################
+
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[
+*********************************************************************************
+STORE DAY, MONTH AND YEAR BEFORE CLOCK UPDATE
+THIS IS USED TO DETERMINE A TRANSITION FROM A DAY,
+ A MONTH AND A YEAR
+*********************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[
+*********************************************************************************
+STORE DAY, MONTH AND YEAR BEFORE CLOCK UPDATE
+THIS IS USED TO DETERMINE A TRANSITION FROM A DAY,
+ A MONTH AND A YEAR
+*********************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[MOV(TOTAL_CLOCK.D_VAL_CURRENT_DAY,D_VAL_DAY_STORE) ,MOV(TOTAL_CLOCK.D_VAL_CURRENT_MO,D_VAL_MNTH_STORE) ,MOV(TOTAL_CLOCK.D_VAL_CURRENT_YR,D_VAL_YR_STORE) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[ES_AOI_WALL_CLOCK(TOTAL_CLOCK);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[*******************************************
+TOTALIZE FLOW VALUES IF MODULE IS 
+STARTED OTHERWISE SKIP THE CALCULATIONS
+*******************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*******************************************
+TOTALIZE FLOW VALUES IF MODULE IS 
+STARTED OTHERWISE SKIP THE CALCULATIONS
+*******************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(B_PROG_STRT_REQ)JMP(STP_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[********************************************************************
+WHEN FLOW UNITS ARE GPM CALCULATE SIGNAL
+FOR FLOW TOTAL 
+
+CONFIGURE TOTALS
+CD_TOT_UNITS TOTAL OUTPUT UNITS 0 = KGAL, 1 = MGAL
+
+*********************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************
+WHEN FLOW UNITS ARE GPM CALCULATE SIGNAL
+FOR FLOW TOTAL 
+
+CONFIGURE TOTALS
+CD_TOT_UNITS TOTAL OUTPUT UNITS 0 = KGAL, 1 = MGAL
+
+*********************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[EQU(CD_TOT_UNITS,0) CPT(R_CLC_FLW_SGNL,((FLOW_EU/60))) ,EQU(CD_TOT_UNITS,1) CPT(R_CLC_FLW_SGNL,FLOW_EU/60) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[*************************************************
+ADD 1 SEC CALCULATED TOTAL
+TO FLOW TOTAL
+*************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************
+ADD 1 SEC CALCULATED TOTAL
+TO FLOW TOTAL
+*************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[GRT(FLOW_EU,R_TOT_MIN_VAL)ADD(R_CLC_RUN_TOT,R_CLC_FLW_SGNL,R_CLC_RUN_TOT)ADD(R_CLC_DILY_TOT,R_CLC_FLW_SGNL,R_CLC_DILY_TOT)ADD(R_CLC_MTHLY_TOT,R_CLC_FLW_SGNL,R_CLC_MTHLY_TOT)ADD(R_CLC_YRLY_TOT,R_CLC_FLW_SGNL,R_CLC_YRLY_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[*************************************************
+RUNNING TOTAL IS IN MGD
+*************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************
+RUNNING TOTAL IS IN MGD
+*************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[DIV(R_CLC_RUN_TOT,1000000,R_RUN_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[*************************************************
+DETERMINE HOW THE DAILY TOTAL
+FLOW SHOULD BE DISPLAYED 
+ON THE SCADA SYSTEM
+*************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************
+DETERMINE HOW THE DAILY TOTAL
+FLOW SHOULD BE DISPLAYED 
+ON THE SCADA SYSTEM
+*************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(CD_TOT_UNITS,0)DIV(R_CLC_DILY_TOT,1000,R_DILY_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[EQU(CD_TOT_UNITS,1)DIV(R_CLC_DILY_TOT,1000000,R_DILY_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[*************************************************
+DISPLAY MONTHLY TOTALS
+IN MGD
+*************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************
+DISPLAY MONTHLY TOTALS
+IN MGD
+*************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[DIV(R_CLC_MTHLY_TOT,1000000,R_MTHLY_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[*************************************************
+DISPLAY YEARY TOTALS
+IN MGD
+*************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************
+DISPLAY YEARY TOTALS
+IN MGD
+*************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[DIV(R_CLC_YRLY_TOT,1000000,R_YRLY_TOT);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[LBL(STP_TOT)OTE(B_JMP_END);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[*************************************************************
+WHEN A DAY TRANSITIONS TO THE NEXT
+DAY, THE STORED POINT WILL NOT EQUAL
+THE CURRENT DAY >> THIS THEN EXECUTES
+THE TRANSFER FROM THE CURRENT PERIOD TOTAL
+TO THE PREVIOUS PERIOD TOTAL
+*************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************************
+WHEN A DAY TRANSITIONS TO THE NEXT
+DAY, THE STORED POINT WILL NOT EQUAL
+THE CURRENT DAY >> THIS THEN EXECUTES
+THE TRANSFER FROM THE CURRENT PERIOD TOTAL
+TO THE PREVIOUS PERIOD TOTAL
+*************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NEQ(TOTAL_CLOCK.D_VAL_CURRENT_DAY,D_VAL_DAY_STORE)ONS(ONESHOT.0)[MOV(R_DILY_TOT,R_YEST_TOT) ,CLR(R_DILY_TOT) ,CLR(R_CLC_DILY_TOT) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Comment>
+<![CDATA[*************************************************************
+WHEN A MONTH TRANSITIONS TO THE NEXT
+MONTH, THE STORED POINT WILL NOT EQUAL
+THE CURRENT MONTH >> THIS THEN EXECUTES
+THE TRANSFER FROM THE CURRENT PERIOD TOTAL
+TO THE PREVIOUS PERIOD TOTAL
+*************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************************
+WHEN A MONTH TRANSITIONS TO THE NEXT
+MONTH, THE STORED POINT WILL NOT EQUAL
+THE CURRENT MONTH >> THIS THEN EXECUTES
+THE TRANSFER FROM THE CURRENT PERIOD TOTAL
+TO THE PREVIOUS PERIOD TOTAL
+*************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NEQ(TOTAL_CLOCK.D_VAL_CURRENT_MO,D_VAL_MNTH_STORE)ONS(ONESHOT.1)[MOV(R_MTHLY_TOT,R_LST_MNTH_TOT) ,CLR(R_MTHLY_TOT) ,CLR(R_CLC_MTHLY_TOT) ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Comment>
+<![CDATA[*************************************************************
+WHEN A YEAR TRANSITIONS TO THE NEXT
+YEAR, THE STORED POINT WILL NOT EQUAL
+THE CURRENT YEAR >> THIS THEN EXECUTES
+THE TRANSFER FROM THE CURRENT PERIOD TOTAL
+TO THE PREVIOUS PERIOD TOTAL
+*************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************************
+WHEN A YEAR TRANSITIONS TO THE NEXT
+YEAR, THE STORED POINT WILL NOT EQUAL
+THE CURRENT YEAR >> THIS THEN EXECUTES
+THE TRANSFER FROM THE CURRENT PERIOD TOTAL
+TO THE PREVIOUS PERIOD TOTAL
+*************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NEQ(TOTAL_CLOCK.D_VAL_CURRENT_YR,D_VAL_YR_STORE)ONS(ONESHOT.2)[MOV(R_YRLY_TOT,R_LST_YR_TOT) ,CLR(R_YRLY_TOT) ,CLR(R_CLC_YRLY_TOT) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="AddOnInstructionDefinition" Name="ES_AOI_WALL_CLOCK"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

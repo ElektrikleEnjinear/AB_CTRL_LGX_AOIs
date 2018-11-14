@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--ANALOG INPUT MODULE-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="EM_AOI_AIM" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2018-10-19T14:37:00.739Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:39:33 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="EM_AOI_AIM" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2012-01-31T21:51:04.650Z" CreatedBy="Not Available" EditedDate="2018-10-19T14:37:00.739Z" EditedBy="PARAMETRIX\stokeart" SoftwareRevision="v29.00"
+>
+<Description>
+<![CDATA[ANALOG INPUT MODULE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ANALOG INPUT MODULE]]>
+</LocalizedDescription>
+</Description>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="AI_SIGNAL_INPUT" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_PLC_SCL_AN_MAX" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MAX VALUE FOR SCALED VALUE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MAX VALUE FOR SCALED VALUE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_PLC_SCL_AN_MIN" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MIN VALUE FOR SCALED VALUE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[MIN VALUE FOR SCALED VALUE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="R_PLC_SCL_AN_SGNL" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ANALOG VALUE TO BE USED FOR HMI AND ANALOG PROCESS CONTROL FUNCTIONS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ANALOG VALUE TO BE USED FOR HMI AND ANALOG PROCESS CONTROL FUNCTIONS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_PLC_OOR_TMR_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Out of Range Alarm Delay Time mSec]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Out of Range Alarm Delay Time mSec]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[5000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="5000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_PLC_OVR_TMR_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Over Range Alarm Delay Time mSec]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Over Range Alarm Delay Time mSec]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[5000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="5000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_PLC_UNR_TMR_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Under Range Alarm Delay Time mSec]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Under Range Alarm Delay Time mSec]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[5000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="5000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_AI_ALM_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Hi-Hi Alarm Delay mSec]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Hi-Hi Alarm Delay mSec]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[5000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="5000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_ANLG_SEL_FLTR" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SELECT OUTPUT ON OUT OR RANGE (0=ACT VAL; 1=LAST GOOD VAL; 2= FULL RANGE FOR OVER RANGE OR MIN FOR UNDER RANGE)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECT OUTPUT ON OUT OR RANGE (0=ACT VAL; 1=LAST GOOD VAL; 2= FULL RANGE FOR OVER RANGE OR MIN FOR UNDER RANGE)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_RNG_ALM_LTCH" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LATCH RANGE ALARMS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LATCH RANGE ALARMS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_OVR_RNG" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AI SIGNAL IS OVER RANGE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AI SIGNAL IS OVER RANGE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_UND_RNG" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AI SIGNAL IS UNDER RANGE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AI SIGNAL IS UNDER RANGE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_OR_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE OUT OF RANGE ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE OUT OF RANGE ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_OVR_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE OVER RANGE ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE OVER RANGE ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_UNR_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE UNDER RANGE ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE UNDER RANGE ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_ALM_ACK" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ACKNOWLEDGE ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ACKNOWLEDGE ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_ALM_RESET" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET FOR LATCHED RANGE ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET FOR LATCHED RANGE ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_ALM_ACK_REQ" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM ACK IS REQUIRED TO TURN OFF ALARM SIGNAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM ACK IS REQUIRED TO TURN OFF ALARM SIGNAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_HIHI_ALM_SP" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HIGH-HIGH ALARM SET POINT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[HIGH-HIGH ALARM SET POINT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[1.00000000e+002]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="100.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_HI_ALM_SP" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Hi Alarm Set Point]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Hi Alarm Set Point]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[9.50000000e+001]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="95.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_LO_ALM_SP" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Lo Alarm Set Point]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Lo Alarm Set Point]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[5.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="5.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_LOLO_ALM_SP" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Lo-Lo Alarm Set Point]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Lo-Lo Alarm Set Point]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_NEG_ROC_SP" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Negative Rate of Change SP]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Negative Rate of Change SP]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[1.00000000e+001]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="10.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_POS_ROC_SP" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Positive Rate of Change SP]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Positive Rate of Change SP]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[1.00000000e+001]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="10.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_HIHI_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Hi-Hi Alarm Disable]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Hi-Hi Alarm Disable]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_HI_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Hi Alarm Disable]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Hi Alarm Disable]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_LO_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Lo Alarm Disable]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Lo Alarm Disable]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_LOLO_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Lo-Lo Alarm Disable]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Lo-Lo Alarm Disable]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_ROC_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Disable ROC Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Disable ROC Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_OR_RNG_ALM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AI Signal Out of Range]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AI Signal Out of Range]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_OVR_RNG_ALM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AI Signal Over Range]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AI Signal Over Range]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_UNR_RNG_ALM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AI Signal Under Range]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[AI Signal Under Range]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_ROC_ALM" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Rate of Change Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Rate of Change Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HIHI_ALM" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Hi-Hi Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Hi-Hi Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HI_ALM" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Hi Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Hi Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_LO_ALM" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Lo Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Lo Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_LOLO_ALM" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Lo-Lo Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Lo-Lo Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="ALMA_AN_SGNL" TagType="Base" DataType="ALARM_ANALOG" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[ANALOG SIGNAL ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ANALOG SIGNAL ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALMD_OR" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[Out Range Alarm Block]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Out Range Alarm Block]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALMD_OV_R" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[Over Range Alarm Block]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Over Range Alarm Block]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALMD_UN_R" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[Under Range Alarm Block]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Under Range Alarm Block]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="B_ENBL_OR_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[Enable Out of Range Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Out of Range Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_OV_R_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[Over Range Alarm Enabled]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Over Range Alarm Enabled]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_UN_R_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[Under Range AI Alarm]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Under Range AI Alarm]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ENBL_ROC_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ROC Alarm Enabled]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ROC Alarm Enabled]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="R_ANLG_LAST_GOOD_VAL" DataType="REAL" Radix="Float" ExternalAccess="None">
+<Description>
+<![CDATA[LAST KNOWN GOOD VALUE TO BE USED FOR VALUE THAT HAS GONE OUT OF RANGE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LAST KNOWN GOOD VALUE TO BE USED FOR VALUE THAT HAS GONE OUT OF RANGE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[########################################################################
+ANALOG INPUT MODULE (AIM)
+THIS MODULE ADRESSES BAD SIGNAL CONDITIONS SUCH AS OUT OF RANGE OR 
+ZERO SIGNAL AND LETS THE USER ADJUST HOW THE CONDITIONS ARE PROCESSED.
+FOR EXAMPLE IF THE SIGNAL GOES BAD, THE OUT PUT CAN BE MADE TO STAY AT LAST KOWN VALUE
+OR SET AT HIGH OR LOW SIGNAL VALUES.  THE MODULE ALSO ALLOWS THE USER TO ENABLE AND DISABLE
+HIGH-HIGH, HIGH, LOW, LOW-LOW ALARMS FOR PROCESS CONTROL AND SCADA ALARMING
+THIS MODULE DOES NOT ADDRESS NORMAL PROCESS HH, H, L OR LL CONTROL FUNCTIONS - THAT IS 
+LEFT UP TO THE USER TO CONFIGURE THAT IN A HIGHER LEVEL STRATEGY
+#########################################################################
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[########################################################################
+ANALOG INPUT MODULE (AIM)
+THIS MODULE ADRESSES BAD SIGNAL CONDITIONS SUCH AS OUT OF RANGE OR 
+ZERO SIGNAL AND LETS THE USER ADJUST HOW THE CONDITIONS ARE PROCESSED.
+FOR EXAMPLE IF THE SIGNAL GOES BAD, THE OUT PUT CAN BE MADE TO STAY AT LAST KOWN VALUE
+OR SET AT HIGH OR LOW SIGNAL VALUES.  THE MODULE ALSO ALLOWS THE USER TO ENABLE AND DISABLE
+HIGH-HIGH, HIGH, LOW, LOW-LOW ALARMS FOR PROCESS CONTROL AND SCADA ALARMING
+THIS MODULE DOES NOT ADDRESS NORMAL PROCESS HH, H, L OR LL CONTROL FUNCTIONS - THAT IS 
+LEFT UP TO THE USER TO CONFIGURE THAT IN A HIGHER LEVEL STRATEGY
+#########################################################################
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+IF THE ANALOG VALUE IS OUT OF RANGE OR BAD THEN TAKE THE LAST KNOWN
+GOOD VALUE AND STORE IT IN THE LAST GOOD KNOW VALUE REGISTER.
+THIS ALLOWS THE PROCESS TO CONTINUE AT THE LAST KNOW VALUE AND GIVE THE OPERATOR
+TIME TO CORRECT THE ISSUE OR PUT THE EQUIPMENT IN MANUAL CONTROL
+*********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+IF THE ANALOG VALUE IS OUT OF RANGE OR BAD THEN TAKE THE LAST KNOWN
+GOOD VALUE AND STORE IT IN THE LAST GOOD KNOW VALUE REGISTER.
+THIS ALLOWS THE PROCESS TO CONTINUE AT THE LAST KNOW VALUE AND GIVE THE OPERATOR
+TIME TO CORRECT THE ISSUE OR PUT THE EQUIPMENT IN MANUAL CONTROL
+*********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIO(B_OVR_RNG) XIO(B_UND_RNG) ,EQU(D_ANLG_SEL_FLTR,0) ]MOV(AI_SIGNAL_INPUT,R_ANLG_LAST_GOOD_VAL)[GEQ(AI_SIGNAL_INPUT,0) MOV(AI_SIGNAL_INPUT,R_PLC_SCL_AN_SGNL) ,LES(AI_SIGNAL_INPUT,0) MOV(0.0,R_PLC_SCL_AN_SGNL) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+SEND THE LAST KNOW GOOD VALUE OUT AS A REFERENCE POINT FOR CONTROL
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+SEND THE LAST KNOW GOOD VALUE OUT AS A REFERENCE POINT FOR CONTROL
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIC(B_OVR_RNG) ,XIC(B_UND_RNG) ]EQU(D_ANLG_SEL_FLTR,1)MOV(R_ANLG_LAST_GOOD_VAL,R_PLC_SCL_AN_SGNL);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS RUNG ALLOWS THE SELECTION OF SETTING THE OUTPUT TO FULL RANGE
+WHEN THE INCOMING SIGNAL IS NOT GOOD OR OUT OF RANGE.
+*********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS RUNG ALLOWS THE SELECTION OF SETTING THE OUTPUT TO FULL RANGE
+WHEN THE INCOMING SIGNAL IS NOT GOOD OR OUT OF RANGE.
+*********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(D_ANLG_SEL_FLTR,2)[XIC(B_OVR_RNG) MOV(R_PLC_SCL_AN_MAX,R_PLC_SCL_AN_SGNL) ,XIC(B_UND_RNG) MOV(R_PLC_SCL_AN_MIN,R_PLC_SCL_AN_SGNL) ];]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG ALLOWS NAINTENANCE TO DISABLE THE ALARM
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG ALLOWS NAINTENANCE TO DISABLE THE ALARM
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_OR_ALM_DSBL)[MUL(D_PLC_OOR_TMR_DLY,1000,ALMD_OR.MinDurationPRE) ,XIC(B_HMI_ALM_ACK_REQ) OTE(ALMD_OR.AckRequired) ,XIC(B_RNG_ALM_LTCH) OTE(ALMD_OR.Latched) ,OTE(B_ENBL_OR_ALM) ,[XIC(B_OVR_RNG) ,XIC(B_UND_RNG) ] ALMD(ALMD_OR,B_HMI_ALM_ACK,B_HMI_ALM_RESET,HMI_OR_ALM_DSBL,B_ENBL_OR_ALM) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG ALARMS THE OUT OF RANGE CONDITION
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG ALARMS THE OUT OF RANGE CONDITION
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(ALMD_OR.InAlarm)OTE(B_OR_RNG_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG ENABLES/DISABLES OVER RANGE ALARMING
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG ENABLES/DISABLES OVER RANGE ALARMING
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_OVR_ALM_DSBL)[MUL(D_PLC_OVR_TMR_DLY,1000,ALMD_OV_R.MinDurationPRE) ,XIC(B_HMI_ALM_ACK_REQ) OTE(ALMD_OV_R.AckRequired) ,XIC(B_RNG_ALM_LTCH) OTE(ALMD_OV_R.Latched) ,OTE(B_ENBL_OV_R_ALM) ,XIC(B_OVR_RNG) ALMD(ALMD_OV_R,B_HMI_ALM_ACK,B_HMI_ALM_RESET,HMI_OVR_ALM_DSBL,B_ENBL_OV_R_ALM) ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[XIC(ALMD_OV_R.InAlarm)OTE(B_OVR_RNG_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG ENABLES/DISABLES UNDER RANGE ALARMING
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG ENABLES/DISABLES UNDER RANGE ALARMING
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_UNR_ALM_DSBL)[MUL(D_PLC_UNR_TMR_DLY,1000,ALMD_UN_R.MinDurationPRE) ,XIC(B_RNG_ALM_LTCH) OTE(ALMD_UN_R.Latched) ,XIC(B_HMI_ALM_ACK_REQ) OTE(ALMD_UN_R.AckRequired) ,OTE(B_ENBL_UN_R_ALM) ,XIC(B_UND_RNG) ALMD(ALMD_UN_R,B_HMI_ALM_ACK,B_HMI_ALM_RESET,HMI_UNR_ALM_DSBL,B_ENBL_UN_R_ALM) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[XIC(ALMD_UN_R.InAlarm)OTE(B_UNR_RNG_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG SETS THE HI-HI, HI, LO, LO-LO AND RATE OF CHANGE ALARMS
+FOR SIGNAL PROCESSING
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG SETS THE HI-HI, HI, LO, LO-LO AND RATE OF CHANGE ALARMS
+FOR SIGNAL PROCESSING
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[MOV(HMI_HIHI_ALM_SP,ALMA_AN_SGNL.HHLimit) MOV(HMI_HI_ALM_SP,ALMA_AN_SGNL.HLimit) MOV(HMI_LO_ALM_SP,ALMA_AN_SGNL.LLimit) MOV(HMI_LOLO_ALM_SP,ALMA_AN_SGNL.LLLimit) ,XIO(HMI_ROC_DSBL) LES(ALMA_AN_SGNL.ROCPeriod,2.0) MOV(2.0,ALMA_AN_SGNL.ROCPeriod) ,XIC(HMI_ROC_DSBL) MOV(0.0,ALMA_AN_SGNL.ROCPeriod) ,MOV(HMI_POS_ROC_SP,ALMA_AN_SGNL.ROCPosLimit) ,MOV(HMI_NEG_ROC_SP,ALMA_AN_SGNL.ROCNegLimit) ];]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG ENABLES/DISABLES HI-HI, HI, LO, LO-LO ALARMING
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG ENABLES/DISABLES HI-HI, HI, LO, LO-LO ALARMING
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIO(HMI_HIHI_ALM_DSBL) OTE(ALMA_AN_SGNL.HHEnabled) ,XIO(HMI_HI_ALM_DSBL) OTE(ALMA_AN_SGNL.HEnabled) ,XIO(HMI_LO_ALM_DSBL) OTE(ALMA_AN_SGNL.LEnabled) ,XIO(HMI_LOLO_ALM_DSBL) OTE(ALMA_AN_SGNL.LLEnabled) ];]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THIS RUNG PROCESSES THE ALARMING FUNCTIONS AND HAS A BUILT-IN 
+DELAY FUNCTION IF AN ALARM DELAY IS NEEDED
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THIS RUNG PROCESSES THE ALARMING FUNCTIONS AND HAS A BUILT-IN 
+DELAY FUNCTION IF AN ALARM DELAY IS NEEDED
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[MUL(D_AI_ALM_DLY,1000,ALMA_AN_SGNL.MinDurationPRE) ,XIC(B_HMI_ALM_ACK_REQ) OTE(ALMA_AN_SGNL.AckRequired) ,ALMA(ALMA_AN_SGNL,R_PLC_SCL_AN_SGNL,B_HMI_ALM_ACK,0,1) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************
+THE FOLLOING RUNGS ARE THE ASSOCIATED ALARMS TO BE USED FOR PROCESS 
+CONTROL AND SCADA ALARM INDICATION
+*********************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************
+THE FOLLOING RUNGS ARE THE ASSOCIATED ALARMS TO BE USED FOR PROCESS 
+CONTROL AND SCADA ALARM INDICATION
+*********************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(ALMA_AN_SGNL.HHInAlarm)OTE(B_HIHI_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[XIC(ALMA_AN_SGNL.HInAlarm)OTE(B_HI_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[XIC(ALMA_AN_SGNL.LInAlarm)OTE(B_LO_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[XIC(ALMA_AN_SGNL.LLInAlarm)OTE(B_LOLO_ALM);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[[XIC(ALMA_AN_SGNL.ROCPosInAlarm) ,XIC(ALMA_AN_SGNL.ROCNegInAlarm) ]OTE(B_ROC_ALM);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

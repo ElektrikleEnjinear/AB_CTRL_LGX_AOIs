@@ -1,0 +1,1064 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--Variable Speed Motor Simulator -->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="SIM_AOI_VSM" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 Variable Speed Motor Simulator" TargetLastEdited="2018-10-18T18:45:19.086Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:41:41 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="SIM_AOI_VSM" Revision="1.0" RevisionExtension="Variable Speed Motor Simulator" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2018-10-17T21:42:33.258Z" CreatedBy="PARAMETRIX\stokeart" EditedDate="2018-10-18T18:45:19.086Z" EditedBy="PARAMETRIX\stokeart"
+ SoftwareRevision="v29.00">
+<Description>
+<![CDATA[Variable Speed Motor Simulator ]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Variable Speed Motor Simulator ]]>
+</LocalizedDescription>
+</Description>
+<RevisionNote>
+<![CDATA[To be used with the Equipment Module - Add On Instruction - Variable Speed Motor (EM_AOI_VSM)]]>
+<LocalizedRevisionNote Lang="en-US">
+<![CDATA[To be used with the Equipment Module - Add On Instruction - Variable Speed Motor (EM_AOI_VSM)]]>
+</LocalizedRevisionNote>
+</RevisionNote>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="INPUT_SPEED_CMD" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FROM EM_AOI_VSM SPEED COMMAND]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FROM EM_AOI_VSM SPEED COMMAND]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="INPUT_START_CMD" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FROM EM_AOI_VSM START
+ COMMAND]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FROM EM_AOI_VSM START
+ COMMAND]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="INPUT_STOP_CMD" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FROM EM_AOI_VSM STOP COMMAND]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FROM EM_AOI_VSM STOP COMMAND]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_RUN" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM RUN INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM RUN INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_FAULT" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM FAULT INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM FAULT INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_OT" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM OVER TEMPERATURE INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM OVER TEMPERATURE INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_MOISTURE" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM MOISTURE INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM MOISTURE INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_HOA_AUTO" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM HOA AUTO INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM HOA AUTO INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_HOA_HAND" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM HOA HAND INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM HOA HAND INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_HOA_OFF" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM HOA OFF INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM HOA OFF INPUT (ACTS LIKE A DIGITAL INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_ACTUAL_SPEED_FB" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM SPEED FEEDBACK INPUT (ACTS LIKE AN ANALOG INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM SPEED FEEDBACK INPUT (ACTS LIKE AN ANALOG INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="OUTPUT_AMPS" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TO EM_AOI_VSM AMPERAGE FEEDBACK INPUT (ACTS LIKE AN ANALOG INPUT)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TO EM_AOI_VSM AMPERAGE FEEDBACK INPUT (ACTS LIKE AN ANALOG INPUT)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="RUN_DELAY_TMR_VALUE" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[THIS VAULE CAUSES A DELAY TO THE RUN FEEDBACK AFTER A START OR STOP COMMAND IS ISSUED FROM THE EM_AOI_VSM (1000 = 1 SECOND)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[THIS VAULE CAUSES A DELAY TO THE RUN FEEDBACK AFTER A START OR STOP COMMAND IS ISSUED FROM THE EM_AOI_VSM (1000 = 1 SECOND)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[5000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="5000"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="SPEED_LAG_STACK_EXECUTION_TIME" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[THIS VALUE CAUSES A LAG IN THE FEEDBACK OF THE SPEED REFERENCE - LOOKS LIKE A SLOW RAMP OF AN ACTUAL LOADED MOTOR]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[THIS VALUE CAUSES A LAG IN THE FEEDBACK OF THE SPEED REFERENCE - LOOKS LIKE A SLOW RAMP OF AN ACTUAL LOADED MOTOR]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TOGGLE_FAULT" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TEST BIT FOR TOGGLING A FAULT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TEST BIT FOR TOGGLING A FAULT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TOGGLE_OT" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TEST BIT FOR TOGGLING A OVER TEMPERATURE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TEST BIT FOR TOGGLING A OVER TEMPERATURE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TOGGLE_MOISTURE" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TEST BIT FOR TOGGLING A MOISTURE SENSOR TRIGGER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TEST BIT FOR TOGGLING A MOISTURE SENSOR TRIGGER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TOGGLE_HOA_POSITION" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0=HAND. 1=OFF, 2=AUTO]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[0=HAND. 1=OFF, 2=AUTO]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="FREEZE_RUN_STATUS" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TEST BIT TO CAUSE A DISCREPANCY ALARM IN THE EM_AOI_VSM MODULE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TEST BIT TO CAUSE A DISCREPANCY ALARM IN THE EM_AOI_VSM MODULE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="FREEZE_SPEED_STATUS" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TEST WORD TO CAUSE A DISCREPANCY ALARM IN THE EM_AOI_VSM MODULE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TEST WORD TO CAUSE A DISCREPANCY ALARM IN THE EM_AOI_VSM MODULE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="SPEED_ARRAY_TIME" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[1000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="1000"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="RUN_DELAY_TMR" DataType="TIMER" ExternalAccess="None">
+<Description>
+<![CDATA[THE RUN DELAY TIMER SIMULATES A DELAYED RUN INDICATION FROM A VFD - SOME VFDS PROVIDE RUN INDICATION AFTER THE MOTOR HAS REACHED THE REQUESTED SPEED]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[THE RUN DELAY TIMER SIMULATES A DELAYED RUN INDICATION FROM A VFD - SOME VFDS PROVIDE RUN INDICATION AFTER THE MOTOR HAS REACHED THE REQUESTED SPEED]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_DELAY" DataType="DINT" Dimensions="100" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="100" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+<Element Index="[32]" Value="0"/>
+<Element Index="[33]" Value="0"/>
+<Element Index="[34]" Value="0"/>
+<Element Index="[35]" Value="0"/>
+<Element Index="[36]" Value="0"/>
+<Element Index="[37]" Value="0"/>
+<Element Index="[38]" Value="0"/>
+<Element Index="[39]" Value="0"/>
+<Element Index="[40]" Value="0"/>
+<Element Index="[41]" Value="0"/>
+<Element Index="[42]" Value="0"/>
+<Element Index="[43]" Value="0"/>
+<Element Index="[44]" Value="0"/>
+<Element Index="[45]" Value="0"/>
+<Element Index="[46]" Value="0"/>
+<Element Index="[47]" Value="0"/>
+<Element Index="[48]" Value="0"/>
+<Element Index="[49]" Value="0"/>
+<Element Index="[50]" Value="0"/>
+<Element Index="[51]" Value="0"/>
+<Element Index="[52]" Value="0"/>
+<Element Index="[53]" Value="0"/>
+<Element Index="[54]" Value="0"/>
+<Element Index="[55]" Value="0"/>
+<Element Index="[56]" Value="0"/>
+<Element Index="[57]" Value="0"/>
+<Element Index="[58]" Value="0"/>
+<Element Index="[59]" Value="0"/>
+<Element Index="[60]" Value="0"/>
+<Element Index="[61]" Value="0"/>
+<Element Index="[62]" Value="0"/>
+<Element Index="[63]" Value="0"/>
+<Element Index="[64]" Value="0"/>
+<Element Index="[65]" Value="0"/>
+<Element Index="[66]" Value="0"/>
+<Element Index="[67]" Value="0"/>
+<Element Index="[68]" Value="0"/>
+<Element Index="[69]" Value="0"/>
+<Element Index="[70]" Value="0"/>
+<Element Index="[71]" Value="0"/>
+<Element Index="[72]" Value="0"/>
+<Element Index="[73]" Value="0"/>
+<Element Index="[74]" Value="0"/>
+<Element Index="[75]" Value="0"/>
+<Element Index="[76]" Value="0"/>
+<Element Index="[77]" Value="0"/>
+<Element Index="[78]" Value="0"/>
+<Element Index="[79]" Value="0"/>
+<Element Index="[80]" Value="0"/>
+<Element Index="[81]" Value="0"/>
+<Element Index="[82]" Value="0"/>
+<Element Index="[83]" Value="0"/>
+<Element Index="[84]" Value="0"/>
+<Element Index="[85]" Value="0"/>
+<Element Index="[86]" Value="0"/>
+<Element Index="[87]" Value="0"/>
+<Element Index="[88]" Value="0"/>
+<Element Index="[89]" Value="0"/>
+<Element Index="[90]" Value="0"/>
+<Element Index="[91]" Value="0"/>
+<Element Index="[92]" Value="0"/>
+<Element Index="[93]" Value="0"/>
+<Element Index="[94]" Value="0"/>
+<Element Index="[95]" Value="0"/>
+<Element Index="[96]" Value="0"/>
+<Element Index="[97]" Value="0"/>
+<Element Index="[98]" Value="0"/>
+<Element Index="[99]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_DELAY_OUT" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_DELAY_CTRL" DataType="CONTROL" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,100,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="100"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_DELAY_RESPONSE" DataType="DINT" Dimensions="100" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[SPEED DELAY SIMULATES THE RAMP UP/DOWN
+OF A VFD.]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SPEED DELAY SIMULATES THE RAMP UP/DOWN
+OF A VFD.]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="100" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+<Element Index="[32]" Value="0"/>
+<Element Index="[33]" Value="0"/>
+<Element Index="[34]" Value="0"/>
+<Element Index="[35]" Value="0"/>
+<Element Index="[36]" Value="0"/>
+<Element Index="[37]" Value="0"/>
+<Element Index="[38]" Value="0"/>
+<Element Index="[39]" Value="0"/>
+<Element Index="[40]" Value="0"/>
+<Element Index="[41]" Value="0"/>
+<Element Index="[42]" Value="0"/>
+<Element Index="[43]" Value="0"/>
+<Element Index="[44]" Value="0"/>
+<Element Index="[45]" Value="0"/>
+<Element Index="[46]" Value="0"/>
+<Element Index="[47]" Value="0"/>
+<Element Index="[48]" Value="0"/>
+<Element Index="[49]" Value="0"/>
+<Element Index="[50]" Value="0"/>
+<Element Index="[51]" Value="0"/>
+<Element Index="[52]" Value="0"/>
+<Element Index="[53]" Value="0"/>
+<Element Index="[54]" Value="0"/>
+<Element Index="[55]" Value="0"/>
+<Element Index="[56]" Value="0"/>
+<Element Index="[57]" Value="0"/>
+<Element Index="[58]" Value="0"/>
+<Element Index="[59]" Value="0"/>
+<Element Index="[60]" Value="0"/>
+<Element Index="[61]" Value="0"/>
+<Element Index="[62]" Value="0"/>
+<Element Index="[63]" Value="0"/>
+<Element Index="[64]" Value="0"/>
+<Element Index="[65]" Value="0"/>
+<Element Index="[66]" Value="0"/>
+<Element Index="[67]" Value="0"/>
+<Element Index="[68]" Value="0"/>
+<Element Index="[69]" Value="0"/>
+<Element Index="[70]" Value="0"/>
+<Element Index="[71]" Value="0"/>
+<Element Index="[72]" Value="0"/>
+<Element Index="[73]" Value="0"/>
+<Element Index="[74]" Value="0"/>
+<Element Index="[75]" Value="0"/>
+<Element Index="[76]" Value="0"/>
+<Element Index="[77]" Value="0"/>
+<Element Index="[78]" Value="0"/>
+<Element Index="[79]" Value="0"/>
+<Element Index="[80]" Value="0"/>
+<Element Index="[81]" Value="0"/>
+<Element Index="[82]" Value="0"/>
+<Element Index="[83]" Value="0"/>
+<Element Index="[84]" Value="0"/>
+<Element Index="[85]" Value="0"/>
+<Element Index="[86]" Value="0"/>
+<Element Index="[87]" Value="0"/>
+<Element Index="[88]" Value="0"/>
+<Element Index="[89]" Value="0"/>
+<Element Index="[90]" Value="0"/>
+<Element Index="[91]" Value="0"/>
+<Element Index="[92]" Value="0"/>
+<Element Index="[93]" Value="0"/>
+<Element Index="[94]" Value="0"/>
+<Element Index="[95]" Value="0"/>
+<Element Index="[96]" Value="0"/>
+<Element Index="[97]" Value="0"/>
+<Element Index="[98]" Value="0"/>
+<Element Index="[99]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_CTU" DataType="COUNTER" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_ARRAY_POINTER" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="SPEED_ARRAY_TMR" DataType="TIMER" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,1000,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MOTOR_CALCULATED_AMPS" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MOTOR_NAMEPLATE_HP" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MOTOR_VOLTAGE" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MOTOR_NAMEPLATE_EFF" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MOTOR_PF" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[############################################################
+SIM_AOI_VSM
+VARIABLE SPEED MOTOR MODULE SPEED SIMULATOR
+TO BE USED IN CONJUNCTION WITH THE EM_AOI_VSM 
+VARIABLE SPEED MOTOR MODULE
+############################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[############################################################
+SIM_AOI_VSM
+VARIABLE SPEED MOTOR MODULE SPEED SIMULATOR
+TO BE USED IN CONJUNCTION WITH THE EM_AOI_VSM 
+VARIABLE SPEED MOTOR MODULE
+############################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THE FOLLOWING RUNGS SET THE SIMULATED HOA SWITCH TO HAND-OFF-AUTO
+IF HOA TOGGLE WORD IS GREATER THAN 2 THEN SET THE VALUE TO 'OFF' OR 1
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THE FOLLOWING RUNGS SET THE SIMULATED HOA SWITCH TO HAND-OFF-AUTO
+IF HOA TOGGLE WORD IS GREATER THAN 2 THEN SET THE VALUE TO 'OFF' OR 1
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[GRT(TOGGLE_HOA_POSITION,2)MOV(1,TOGGLE_HOA_POSITION);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+IF THE HOA SWITCH IS = 0 THEN IT IS IN 'HAND' POSITION
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+IF THE HOA SWITCH IS = 0 THEN IT IS IN 'HAND' POSITION
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(TOGGLE_HOA_POSITION,0)[OTU(OUTPUT_HOA_AUTO) ,OTL(OUTPUT_HOA_HAND) ,OTU(OUTPUT_HOA_OFF) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+IF THE HOA SWITCH IS = 1 THEN IT IS IN 'OFF' POSITION
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+IF THE HOA SWITCH IS = 1 THEN IT IS IN 'OFF' POSITION
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(TOGGLE_HOA_POSITION,1)[OTU(OUTPUT_HOA_AUTO) ,OTU(OUTPUT_HOA_HAND) ,OTL(OUTPUT_HOA_OFF) ];]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+IF THE HOA SWITCH IS = 2 THEN IT IS IN 'AUTO' POSITION
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+IF THE HOA SWITCH IS = 2 THEN IT IS IN 'AUTO' POSITION
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(TOGGLE_HOA_POSITION,2)[OTL(OUTPUT_HOA_AUTO) ,OTU(OUTPUT_HOA_HAND) ,OTU(OUTPUT_HOA_OFF) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+WHEN THE COMMAND TO RUN IS SENT FROM THE VARIABLE SPEED MODULE
+A TIMER IS STARTED. 
+********************************************************************************************************
+
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+WHEN THE COMMAND TO RUN IS SENT FROM THE VARIABLE SPEED MODULE
+A TIMER IS STARTED. 
+********************************************************************************************************
+
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(INPUT_START_CMD)MOV(RUN_DELAY_TMR_VALUE,RUN_DELAY_TMR.PRE)TON(RUN_DELAY_TMR,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[**************************************************************************************************************
+WHEN THE TIMER IS DONE, THE SIMULATED RUN INDICATION
+IS SENT BACK TO THE VARIABLE SPEED MODULE 
+(IT RESPONDS LIKE A RUN INDICATION DIGITAL INPUT)
+***************************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[**************************************************************************************************************
+WHEN THE TIMER IS DONE, THE SIMULATED RUN INDICATION
+IS SENT BACK TO THE VARIABLE SPEED MODULE 
+(IT RESPONDS LIKE A RUN INDICATION DIGITAL INPUT)
+***************************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(RUN_DELAY_TMR.DN)OTE(OUTPUT_RUN);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS POINT ALLOWS A TESTER TO TURN A 'FAULT' INDICATION ON/OFF
+(IT RESPONDS LIKE A FAULT INDICATION DIGITAL INPUT)
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS POINT ALLOWS A TESTER TO TURN A 'FAULT' INDICATION ON/OFF
+(IT RESPONDS LIKE A FAULT INDICATION DIGITAL INPUT)
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(TOGGLE_FAULT)OTE(OUTPUT_FAULT);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS POINT ALLOWS A TESTER TO TURN A 'MOISTURE' INDICATION ON/OFF
+(IT RESPONDS LIKE A MOIOSTURE INDICATION DIGITAL INPUT)
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS POINT ALLOWS A TESTER TO TURN A 'MOISTURE' INDICATION ON/OFF
+(IT RESPONDS LIKE A MOIOSTURE INDICATION DIGITAL INPUT)
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(TOGGLE_MOISTURE)OTE(OUTPUT_MOISTURE);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS POINT ALLOWS A TESTER TO TURN A 'OVER TEMP' INDICATION ON/OFF
+(IT RESPONDS LIKE A OVER TEMPERATURE INDICATION DIGITAL INPUT)
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS POINT ALLOWS A TESTER TO TURN A 'OVER TEMP' INDICATION ON/OFF
+(IT RESPONDS LIKE A OVER TEMPERATURE INDICATION DIGITAL INPUT)
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(TOGGLE_OT)OTE(OUTPUT_OT);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THE SPEED ARRAY TIMER SETS THE TIME TO SIMULATE A RAMPED SPEED
+IF SET TO 1000 (1 SECOND) IT INCREMENTS ARRAY POINTER BY ONE EVERY 
+SECOND AND A VERY SLOW RAMP TIME (100 SECONDS) TO REACH THE REQUESTED SPEED
+A VALUE OF 100 WILL TAKE 10 SECONDS TO RAMP
+(IT ACTS LIKE A SPEED FEEDBACK SIGNAL ANALOG INPUT)
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THE SPEED ARRAY TIMER SETS THE TIME TO SIMULATE A RAMPED SPEED
+IF SET TO 1000 (1 SECOND) IT INCREMENTS ARRAY POINTER BY ONE EVERY 
+SECOND AND A VERY SLOW RAMP TIME (100 SECONDS) TO REACH THE REQUESTED SPEED
+A VALUE OF 100 WILL TAKE 10 SECONDS TO RAMP
+(IT ACTS LIKE A SPEED FEEDBACK SIGNAL ANALOG INPUT)
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(SPEED_ARRAY_TMR.DN)MOV(SPEED_ARRAY_TIME,SPEED_ARRAY_TMR.PRE)TON(SPEED_ARRAY_TMR,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THE ARRAY POINTER IS A POINTER TO POPULATE AN ARRAY WITH NEW DATA
+IN ORDER TO PREVENT THE ARRAY POINTER FROM REACHING OUTSIDE THE ARRAY
+MAXIMUM VALUE (100 DATA POINTS FROM 0 - 99) THIS RUNG LIMITS TO POINTER AND 
+RESETS IT TO 0 IF THE POINTER IS OUTSIDE THE 0 - 99 RANGE
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THE ARRAY POINTER IS A POINTER TO POPULATE AN ARRAY WITH NEW DATA
+IN ORDER TO PREVENT THE ARRAY POINTER FROM REACHING OUTSIDE THE ARRAY
+MAXIMUM VALUE (100 DATA POINTS FROM 0 - 99) THIS RUNG LIMITS TO POINTER AND 
+RESETS IT TO 0 IF THE POINTER IS OUTSIDE THE 0 - 99 RANGE
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(SPEED_ARRAY_TMR.DN)GEQ(SPEED_ARRAY_POINTER,99)MOV(0,SPEED_ARRAY_POINTER);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS RUNG SIMPLY INCREMENTS THE ARRAY POINTER EACH TIME THE ARRAY TIMER
+DONE BIT IS SET
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS RUNG SIMPLY INCREMENTS THE ARRAY POINTER EACH TIME THE ARRAY TIMER
+DONE BIT IS SET
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(SPEED_ARRAY_TMR.DN)LEQ(SPEED_ARRAY_POINTER,98)ADD(SPEED_ARRAY_POINTER,1,SPEED_ARRAY_POINTER);]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+WHEN THE 'INPUT_SPEED_CMD' CHANGES, THE POINTER BEGINS TO POPULATE
+THE ARRAY WITH THE NEW SPEED REFERENCE
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+WHEN THE 'INPUT_SPEED_CMD' CHANGES, THE POINTER BEGINS TO POPULATE
+THE ARRAY WITH THE NEW SPEED REFERENCE
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[MOV(INPUT_SPEED_CMD,SPEED_DELAY[SPEED_ARRAY_POINTER]);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+TO SIMULATE A RAMP THE AVERAGE MODULE USES THE OLD SPEED COMMAND
+AND THE NEW SPEED COMMAND TO SLOWLY CHANGE THE SPEED OVER TIME
+AS THE ARRAY POPULATES THE ARRAY WITH THE NEW SPEED REFERENCE AND THE
+OLD SPEED REFERENCE IS WRITTEN OVER THE OUTPUT VALUE EVENTUALLY
+REACHES THE NEW SPEED REFERENCE VALUE - BASICALLY THE ENTIRE ARRAY
+IS POUPLATED WITH THE SAME VALUE AND AS WE NOW THE AVERAGE OF THE SAME 
+VALUE 100 TIMES IS THE SAME VALUE. 
+********************************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+TO SIMULATE A RAMP THE AVERAGE MODULE USES THE OLD SPEED COMMAND
+AND THE NEW SPEED COMMAND TO SLOWLY CHANGE THE SPEED OVER TIME
+AS THE ARRAY POPULATES THE ARRAY WITH THE NEW SPEED REFERENCE AND THE
+OLD SPEED REFERENCE IS WRITTEN OVER THE OUTPUT VALUE EVENTUALLY
+REACHES THE NEW SPEED REFERENCE VALUE - BASICALLY THE ENTIRE ARRAY
+IS POUPLATED WITH THE SAME VALUE AND AS WE NOW THE AVERAGE OF THE SAME 
+VALUE 100 TIMES IS THE SAME VALUE. 
+********************************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[AVE(SPEED_DELAY,0,SPEED_DELAY_OUT,SPEED_DELAY_CTRL,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS RUNG MOVES THE SPEED_DELAY_OUT TO THE SPEED FEEDBACK AND 
+SIMULATES SPEED FEEDBACK FROM A VARIABLE SPEED DRIVE
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS RUNG MOVES THE SPEED_DELAY_OUT TO THE SPEED FEEDBACK AND 
+SIMULATES SPEED FEEDBACK FROM A VARIABLE SPEED DRIVE
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[MOV(SPEED_DELAY_OUT,OUTPUT_ACTUAL_SPEED_FB);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+THIS RUNG CALCULATES THE AMPERAGE BASED A STANDARD FORMILA
+AND THE NAME PLATE DATA INFORMATION
+USING (HP * 746)/(E * %EFF * PF * 1.73) FOR 3 PHASE MOTORS
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+THIS RUNG CALCULATES THE AMPERAGE BASED A STANDARD FORMILA
+AND THE NAME PLATE DATA INFORMATION
+USING (HP * 746)/(E * %EFF * PF * 1.73) FOR 3 PHASE MOTORS
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[CPT(MOTOR_CALCULATED_AMPS,((MOTOR_NAMEPLATE_HP*746)/(MOTOR_VOLTAGE*MOTOR_NAMEPLATE_EFF*MOTOR_PF*1.73)));]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+IF THE MOTOR IS INDICATING A RUNNING STATUS, MOVE THE CALCULATED 
+AMPERAGE * THE PERCENT SPEED TO THE AMPERAGE OUTPUT - 
+(NOTE: SINCE THIS IS A SIMULATION, THIS JUST GIVES SOME RESEMBALANCE OF 
+AMPERAGE CHANGING WITH SPEED FOR DISPLAY PURPOSES ON AN HMI)
+ACTS LIKE AN ANALOG INPUT AT THE PLC
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+IF THE MOTOR IS INDICATING A RUNNING STATUS, MOVE THE CALCULATED 
+AMPERAGE * THE PERCENT SPEED TO THE AMPERAGE OUTPUT - 
+(NOTE: SINCE THIS IS A SIMULATION, THIS JUST GIVES SOME RESEMBALANCE OF 
+AMPERAGE CHANGING WITH SPEED FOR DISPLAY PURPOSES ON AN HMI)
+ACTS LIKE AN ANALOG INPUT AT THE PLC
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(RUN_DELAY_TMR.DN)CPT(OUTPUT_AMPS,(MOTOR_CALCULATED_AMPS*OUTPUT_ACTUAL_SPEED_FB)/100);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Comment>
+<![CDATA[********************************************************************************************************
+IF THE MOTOR IS INDICATING A STOPPED STATUS, MOVE ZERO AMPERAGE 
+TO THE AMPERAGE OUTPUT - ACTS LIKE AN ANALOG INPUT AT THE PLC
+********************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[********************************************************************************************************
+IF THE MOTOR IS INDICATING A STOPPED STATUS, MOVE ZERO AMPERAGE 
+TO THE AMPERAGE OUTPUT - ACTS LIKE AN ANALOG INPUT AT THE PLC
+********************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(RUN_DELAY_TMR.DN)MOV(0.0,OUTPUT_AMPS);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Comment>
+<![CDATA[#########################################################################
+AND THE PRINCE AND THE PRINCESS LIVED HAPPILY EVER AFTER!
+#########################################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[#########################################################################
+AND THE PRINCE AND THE PRINCESS LIVED HAPPILY EVER AFTER!
+#########################################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

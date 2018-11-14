@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--DISCRETE INPUT MODULE
+
+-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="EM_AOI_DIM" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2018-10-19T14:11:32.853Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:40:25 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="EM_AOI_DIM" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2012-03-14T18:19:33.717Z" CreatedBy="FWY-RSTOOKKIT\apple" EditedDate="2018-10-19T14:11:32.853Z" EditedBy="PARAMETRIX\stokeart" SoftwareRevision="v29.00"
+>
+<Description>
+<![CDATA[DISCRETE INPUT MODULE
+
+]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCRETE INPUT MODULE
+
+]]>
+</LocalizedDescription>
+</Description>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="B_HMI_ALM_ON_ENGZ" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[GENERATE ALARM WHEN DISCRETE SIGNAL IS ON]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[GENERATE ALARM WHEN DISCRETE SIGNAL IS ON]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_SGNL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INPUT SIGNAL FROM EQUIPMENT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[INPUT SIGNAL FROM EQUIPMENT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_ALM_ACK_REQ" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM ACKNOWLEDGE REQUIRED TO CLEAR ALARM FROM PLC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM ACKNOWLEDGE REQUIRED TO CLEAR ALARM FROM PLC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_ALM_ACK" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM ACKNOWLEDGE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM ACKNOWLEDGE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_ALM_RESET" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM RESET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM RESET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_ALM" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_HMI_DSCR_ALM_DSBL" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE DISCRETE ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE DISCRETE ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="D_DSCR_AL_DLY_SP" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISCREPANCY ALARM DELAY IN mSEC
+SET BY PROGRAMMER]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM DELAY IN mSEC
+SET BY PROGRAMMER]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_DSCR_ALM_LTCH" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM RESET REQUIRED TO UNLATCH PLC ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM RESET REQUIRED TO UNLATCH PLC ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="ALM_DSCR" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[EQUIPMENT MODULE DISCRETE ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[EQUIPMENT MODULE DISCRETE ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="B_SGNL" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="B_ENBL_DSCR_ALM" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ONS_DEM_LGC" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[#################################################################################
+DISCRETE EQUIPMENT MODULE (DEM)
+
+HANDLE DISCRETE INPUTS TO GENERATE ALARMS AND OTHER STATUSES.
+################################################################################]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[#################################################################################
+DISCRETE EQUIPMENT MODULE (DEM)
+
+HANDLE DISCRETE INPUTS TO GENERATE ALARMS AND OTHER STATUSES.
+################################################################################]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[****************************************************************************************************
+@@@@@@@@@@@@@@   SIGNAL ALARM LOGIC   @@@@@@@@@@@@
+****************************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[****************************************************************************************************
+@@@@@@@@@@@@@@   SIGNAL ALARM LOGIC   @@@@@@@@@@@@
+****************************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[*****************************************************
+DISCRETE ALARM
+GENERATE ALARM WHEN SIGNAL IS IN ALARM CONDITION
+NOTE: THE ALARM LOGIC BELOW IS USED WHEN THE
+LOCAL HMI IS NOT THE SAME PLATFORM AS THE SCADA SYSTEM
+FOR EXAMPLE: THE OPERATOR ACKNOWLEDGES AN ALARM ON SCADA
+BUT THE ALARM IS STILL PRESENT AT A PANELVIEW. THIS LOGIC ALLOWS PROPOGATION 
+OF THE ACKNOWLEDGEMENT TO THE PANELVIEW
+******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*****************************************************
+DISCRETE ALARM
+GENERATE ALARM WHEN SIGNAL IS IN ALARM CONDITION
+NOTE: THE ALARM LOGIC BELOW IS USED WHEN THE
+LOCAL HMI IS NOT THE SAME PLATFORM AS THE SCADA SYSTEM
+FOR EXAMPLE: THE OPERATOR ACKNOWLEDGES AN ALARM ON SCADA
+BUT THE ALARM IS STILL PRESENT AT A PANELVIEW. THIS LOGIC ALLOWS PROPOGATION 
+OF THE ACKNOWLEDGEMENT TO THE PANELVIEW
+******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(B_HMI_DSCR_ALM_DSBL)[MUL(D_DSCR_AL_DLY_SP,1000,ALM_DSCR.MinDurationPRE) ,XIC(B_HMI_ALM_ACK_REQ) OTE(ALM_DSCR.AckRequired) ,XIC(B_DSCR_ALM_LTCH) OTE(ALM_DSCR.Latched) ,OTE(B_ENBL_DSCR_ALM) ,[XIO(DI_SGNL) XIO(B_HMI_ALM_ON_ENGZ) ,XIC(DI_SGNL) XIC(B_HMI_ALM_ON_ENGZ) ] ALMD(ALM_DSCR,B_HMI_ALM_ACK,B_HMI_ALM_RESET,B_HMI_DSCR_ALM_DSBL,B_ENBL_DSCR_ALM) ,XIC(ALM_DSCR.InAlarm) OTE(B_ALM) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[*******************************************************************************
+OUTPUT SIGNAL WHEN ALARM IS DIABLED
+*******************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*******************************************************************************
+OUTPUT SIGNAL WHEN ALARM IS DIABLED
+*******************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(B_HMI_DSCR_ALM_DSBL)[XIO(DI_SGNL) XIO(B_HMI_ALM_ON_ENGZ) ,XIC(DI_SGNL) XIC(B_HMI_ALM_ON_ENGZ) ]OTE(B_SGNL);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[************************************************************************************************************
+@@@@@@   END OF ALARM LOGIC   @@@@@@
+************************************************************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[************************************************************************************************************
+@@@@@@   END OF ALARM LOGIC   @@@@@@
+************************************************************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>

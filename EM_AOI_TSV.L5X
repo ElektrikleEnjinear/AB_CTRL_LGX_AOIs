@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--TWO STATE VALVE EQUIPMENT MODULE-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="EM_AOI_TSV" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2013-05-08T17:52:00.108Z" CurrentLanguage="en-US" ContainsContext="true" ExportDate="Fri Oct 19 14:40:42 2018" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="L62_CP101">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="EM_AOI_TSV" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2012-01-25T22:09:16.700Z" CreatedBy="KJ\DaveW" EditedDate="2013-05-08T17:52:00.108Z" EditedBy="SOPHIA\SCADA2" SoftwareRevision="v19.01"
+>
+<Description>
+<![CDATA[TWO STATE VALVE EQUIPMENT MODULE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[TWO STATE VALVE EQUIPMENT MODULE]]>
+</LocalizedDescription>
+</Description>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Input - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[Enable Output - System Defined Parameter]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="DI_OPND_POS" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INPUT SIGNAL FROM ACTUATOR OPENED POS SWITCH]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[INPUT SIGNAL FROM ACTUATOR OPENED POS SWITCH]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_CLSD_POS" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INPUT SIGNAL FROM ACTUATOR CLOSED POS SWITCH]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[INPUT SIGNAL FROM ACTUATOR CLOSED POS SWITCH]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_REMOTE" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LOCAL ACTUATOR SWITCH IN REMOTE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LOCAL ACTUATOR SWITCH IN REMOTE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DI_ACT_FLT" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ACTUATOR FAULT SIGNAL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ACTUATOR FAULT SIGNAL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_ALM_ACK" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM ACKNOWLEDGE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM ACKNOWLEDGE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_ALM_RST" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM RESET]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ALARM RESET]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_VLV_IS_OPND" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[POSITION SWITCH SHOWS OPENED]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[POSITION SWITCH SHOWS OPENED]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_VLV_IS_CLSD" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[POSITION SWITCH SHOWS CLOSED]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[POSITION SWITCH SHOWS CLOSED]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_VLV_MAN_MD" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VALVE MANUAL MODE SELECTED BY HMI]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[VALVE MANUAL MODE SELECTED BY HMI]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_VLV_AUTO1_MD" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VALVE AUTO 1 MODE SELECTED BY HMI]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[VALVE AUTO 1 MODE SELECTED BY HMI]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_VLV_AUTO2_MD" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VALVE IAUTO 2 MODE SELECTED BY HMI]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[VALVE IAUTO 2 MODE SELECTED BY HMI]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_VLV_UNVLBL" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VALVE IS UNAVAILABLE FOR PLC CONTROL]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[VALVE IS UNAVAILABLE FOR PLC CONTROL]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_REMOTE" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ACTUATOR IS IN REMOTE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ACTUATOR IS IN REMOTE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_DSCR_ALM_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[DISCREPANCY ALARM IS ON]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM IS ON]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_FLT_ALM_ON" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[FAULT ALARM IS ON]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FAULT ALARM IS ON]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_AUTO2_OPN" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OPEN SIGNAL FROM AUTO 2 CONTROL LOGIC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OPEN SIGNAL FROM AUTO 2 CONTROL LOGIC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_AUTO1_CLS" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CLOSE SIGNAL FROM AUTO 1 CONTROL LOGIC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CLOSE SIGNAL FROM AUTO 1 CONTROL LOGIC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DO_OPEN_VLV" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OUTPUT SIGNAL TO OPEN VALVE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OUTPUT SIGNAL TO OPEN VALVE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="DO_CLOSE_VLV" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OUTPUT SIGNAL TO CLOSE VALVE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OUTPUT SIGNAL TO CLOSE VALVE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_VLV_MD" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI MODE FOR ACTUATOR 
+0 =MANUAL, 
+1 = AUTO 1, 
+2 = AUTO 2)]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[HMI MODE FOR ACTUATOR 
+0 =MANUAL, 
+1 = AUTO 1, 
+2 = AUTO 2)]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_UNVLBL_MODE" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SELECT OUTPUT SIGNAL TO VALVE WHEN UNAVAILABLE; 0 = DON'T CARE, 1 =OPEN, 2 = CLOSE, 3 = TRACK FIELD STATE WHILE UNAVAILABLE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[SELECT OUTPUT SIGNAL TO VALVE WHEN UNAVAILABLE; 0 = DON'T CARE, 1 =OPEN, 2 = CLOSE, 3 = TRACK FIELD STATE WHILE UNAVAILABLE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_DSCR_ALM_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISCREPANCY ALARM DELAY, mSEC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISCREPANCY ALARM DELAY, mSEC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[60]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="60"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_FLT_ALM_DLY" TagType="Base" DataType="DINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FAULT ALARM DELAY, mSEC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[FAULT ALARM DELAY, mSEC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[50]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="50"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="ALM_POS_DSCR" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[POSITION DISCREPANCY ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[POSITION DISCREPANCY ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="ALM_FLT_ALM" TagType="Base" DataType="ALARM_DIGITAL" Usage="InOut" Required="true" Visible="true">
+<Description>
+<![CDATA[ACTUATOR FAULT ALARM BLOCK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ACTUATOR FAULT ALARM BLOCK]]>
+</LocalizedDescription>
+</Description>
+</Parameter>
+<Parameter Name="B_CFG_DSBL_VLV_DSCR" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[DISABLE ACTUATOR ON DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE ACTUATOR ON DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_CFG_DSBL_VLV_FLT" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[DISABLE ACTUATOR ON FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE ACTUATOR ON FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_CFG_LTCH_DSCR_ALRM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[LATCH DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LATCH DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_CFG_DSBL_FLT_ALRM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[DISABLE FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_CFG_DSBL_DSCR_ALRM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[DISABLE DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_CFG_LTCH_FLT_ALRM" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[LATCH FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LATCH FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_CFG_REQ_ALRM_ACK" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="None">
+<Description>
+<![CDATA[REQUIRE ACKNOWLEDGE FOR PLC ALARM ACK]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[REQUIRE ACKNOWLEDGE FOR PLC ALARM ACK]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_AUTO1_OPN" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OPEN SIGNAL FROM AUTO 1 CONTROL LOGIC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OPEN SIGNAL FROM AUTO 1 CONTROL LOGIC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_MAN_OPN" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OPEN SIGNAL FROM MANUAL CONTROL FROM HMI]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[OPEN SIGNAL FROM MANUAL CONTROL FROM HMI]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="HMI_MAN_CLS" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CLOSE SIGNAL FROM HMI CONTROL LOGIC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CLOSE SIGNAL FROM HMI CONTROL LOGIC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="B_AUTO2_CLS" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CLOSE SIGNAL FROM AUTO 2 CONTROL LOGIC]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[CLOSE SIGNAL FROM AUTO 2 CONTROL LOGIC]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="B_DSCR_ALM_ENBL" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_FLT_ALM_ENBL" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ENABLE FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ENABLE FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ONE_SHOT" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ONE SHOT]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ONE SHOT]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_VLV_UNVLBL_MD_IGNORE" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[UNAVAILABLE VALVE
+MODE IGNORE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[UNAVAILABLE VALVE
+MODE IGNORE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_VLV_UNVLBL_OPN" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[UNAVAILABLE VALVE
+MODE OPEN]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[UNAVAILABLE VALVE
+MODE OPEN]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_VLV_UNVLBL_CLS" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[UNAVAILABLE VALVE
+MODE CLOSE]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[UNAVAILABLE VALVE
+MODE CLOSE]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="B_ALRM_ACK_REQ" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ACK REQUIRED FOR ALARMS]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ACK REQUIRED FOR ALARMS]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="HMI_DSBL_ON_DSCR" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE ACTUATOR CONTROL ON DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE ACTUATOR CONTROL ON DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="HMI_DSBL_ON_FLT" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE ACTUATOR CONTROL ON FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE ACTUATOR CONTROL ON FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="HMI_FLT_ALM_LTCH" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LATCH ACTUATOR FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LATCH ACTUATOR FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="HMI_FLT_ALM_DSBL" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE ACTUATOR FAULT ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE ACTUATOR FAULT ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="HMI_DSCR_ALM_LTCH" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LATCH DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[LATCH DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="HMI_DSCR_ALM_DSBL" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DISABLE DISCREPANCY ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[DISABLE DISCREPANCY ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ALM_ACK" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[ACK ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[ACK ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ALM_RESET" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[RESET ALARM]]>
+<LocalizedDescription Lang="en-US">
+<![CDATA[RESET ALARM]]>
+</LocalizedDescription>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[################################################################
+MODULE TO CONTROL A TWO POSITION CONTROL VALVE
+################################################################
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[################################################################
+MODULE TO CONTROL A TWO POSITION CONTROL VALVE
+################################################################
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[XIC(HMI_ALM_ACK)OTE(ALM_ACK);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIC(HMI_ALM_RST)OTE(ALM_RESET);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[###########################
+MVM ALARM ACTION AND
+ALARM CONFIGURATION 
+###########################
+
+*******************************************************
+SET ALARM DISABLES AND LATCHES
+AND ACTUATOR ACTION ON ALARMS
+
+BIT 0 = DISABLE ACTUATOR ON DISCR ALARM
+BIT 1 = DISABLE ACTUATOR ON FAULT ALARM
+BIT 2 = DISABLE DISCR ALARM
+BIT 3 = LATCH DISCR ALARM
+BIT 4 = DISABLE FAULT ALARM
+BIT 5 = LATCH FAULT ALARM
+BIT 6 = REQUIRE ACK FOR ALARMS
+******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[###########################
+MVM ALARM ACTION AND
+ALARM CONFIGURATION 
+###########################
+
+*******************************************************
+SET ALARM DISABLES AND LATCHES
+AND ACTUATOR ACTION ON ALARMS
+
+BIT 0 = DISABLE ACTUATOR ON DISCR ALARM
+BIT 1 = DISABLE ACTUATOR ON FAULT ALARM
+BIT 2 = DISABLE DISCR ALARM
+BIT 3 = LATCH DISCR ALARM
+BIT 4 = DISABLE FAULT ALARM
+BIT 5 = LATCH FAULT ALARM
+BIT 6 = REQUIRE ACK FOR ALARMS
+******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[**********************************************
+VALVE ALARMS
+**********************************************
+
+****************************************************************
+DISCREPANCY ALARM
+VALVE POSITION SWITCHES AND
+POSITION COMMAND DISAGREE
+****************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[**********************************************
+VALVE ALARMS
+**********************************************
+
+****************************************************************
+DISCREPANCY ALARM
+VALVE POSITION SWITCHES AND
+POSITION COMMAND DISAGREE
+****************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_DSCR_ALM_DSBL)[MUL(HMI_DSCR_ALM_DLY,1000,ALM_POS_DSCR.MinDurationPRE) OTE(B_DSCR_ALM_ENBL) ,XIC(B_ALRM_ACK_REQ) OTE(ALM_POS_DSCR.AckRequired) ,XIC(HMI_DSCR_ALM_LTCH) OTE(ALM_POS_DSCR.Latched) ,[XIC(DO_OPEN_VLV) XIO(DI_OPND_POS) ,XIC(DO_CLOSE_VLV) XIO(DI_CLSD_POS) ] ALMD(ALM_POS_DSCR,ALM_ACK,ALM_RESET,HMI_DSCR_ALM_DSBL,B_DSCR_ALM_ENBL) ,XIC(ALM_POS_DSCR.InAlarm) OTE(B_DSCR_ALM_ON) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[*******************************************************
+FAULT ALARM FROM
+ACUTATOR FAULT SIGNAL
+*******************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*******************************************************
+FAULT ALARM FROM
+ACUTATOR FAULT SIGNAL
+*******************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(HMI_FLT_ALM_DSBL)[MUL(HMI_FLT_ALM_DLY,1000,ALM_FLT_ALM.MinDurationPRE) OTE(B_FLT_ALM_ENBL) ,XIC(B_ALRM_ACK_REQ) OTE(ALM_FLT_ALM.AckRequired) ,XIC(HMI_FLT_ALM_LTCH) OTE(ALM_FLT_ALM.Latched) ,XIC(DI_ACT_FLT) ALMD(ALM_FLT_ALM,ALM_ACK,ALM_RESET,HMI_FLT_ALM_DSBL,B_FLT_ALM_ENBL) ,XIC(ALM_FLT_ALM.InAlarm) OTE(B_FLT_ALM_ON) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[XIC(HMI_ALM_ACK)OTU(HMI_ALM_ACK);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[XIC(HMI_ALM_RST)OTU(HMI_ALM_RST);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[*********************************************************************
+VALVE OPERATING STATUSES
+
+FIELD STATUS' IN TSV TO
+STATUS' OUT OF TSV
+*********************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*********************************************************************
+VALVE OPERATING STATUSES
+
+FIELD STATUS' IN TSV TO
+STATUS' OUT OF TSV
+*********************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(DI_CLSD_POS)OTE(B_VLV_IS_CLSD);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[XIC(DI_OPND_POS)OTE(B_VLV_IS_OPND);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[XIC(DI_REMOTE)OTE(B_REMOTE);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[******************************************************************************
+VALVE CONTROL
+*****************************************************************************
+SELECT VALVE CONTROL MODE FROM HMI HOA SWITCH
+0 = MANUAL; 1 = AUTO 1; 2 = AUTO 2
+******************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[******************************************************************************
+VALVE CONTROL
+*****************************************************************************
+SELECT VALVE CONTROL MODE FROM HMI HOA SWITCH
+0 = MANUAL; 1 = AUTO 1; 2 = AUTO 2
+******************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(HMI_VLV_MD,0)OTE(B_VLV_MAN_MD);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[EQU(HMI_VLV_MD,1)OTE(B_VLV_AUTO1_MD);]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[EQU(HMI_VLV_MD,2)OTE(B_VLV_AUTO2_MD);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Comment>
+<![CDATA[*************************************************************************
+DETERMINE IF VALVE IS AVAILABLE FOR PLC CONTROL
+IT'S NOT AVAILABLE IF IT IS
+NOT IN REMOTE AT THE LOCAL SWITCH,
+OR IN ALARM FOR AN ALARM SELECTED
+TO DISABLE THE VALVE
+***********************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*************************************************************************
+DETERMINE IF VALVE IS AVAILABLE FOR PLC CONTROL
+IT'S NOT AVAILABLE IF IT IS
+NOT IN REMOTE AT THE LOCAL SWITCH,
+OR IN ALARM FOR AN ALARM SELECTED
+TO DISABLE THE VALVE
+***********************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[[XIO(DI_REMOTE) ,XIC(HMI_DSBL_ON_DSCR) XIC(B_DSCR_ALM_ON) ,XIC(HMI_DSBL_ON_FLT) XIC(B_FLT_ALM_ON) ]OTE(B_VLV_UNVLBL);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Comment>
+<![CDATA[**************************************************************************
+VALVE UNAVAILABLE FOR PLC CONTROL LOGIC
+
+SELECT OUTPUT SIGNAL TO VALVE WHEN UNAVAILABLE; 
+0 = DON'T CARE, 
+1 =OPEN, 
+2 = CLOSE, 
+3 = TRACK FIELD STATE WHILE UNAVAILABLE
+**************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[**************************************************************************
+VALVE UNAVAILABLE FOR PLC CONTROL LOGIC
+
+SELECT OUTPUT SIGNAL TO VALVE WHEN UNAVAILABLE; 
+0 = DON'T CARE, 
+1 =OPEN, 
+2 = CLOSE, 
+3 = TRACK FIELD STATE WHILE UNAVAILABLE
+**************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[EQU(HMI_UNVLBL_MODE,0)XIC(B_VLV_UNVLBL)OTE(B_VLV_UNVLBL_MD_IGNORE);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Comment>
+<![CDATA[*********************************************************************
+CONTROL OUTPUT SIGNALS TO OPEN AND 
+CLOSE VALVE
+*********************************************************************]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[*********************************************************************
+CONTROL OUTPUT SIGNALS TO OPEN AND 
+CLOSE VALVE
+*********************************************************************]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIO(B_VLV_UNVLBL)[XIC(B_VLV_MAN_MD) XIC(HMI_MAN_OPN) ,XIC(B_VLV_AUTO1_MD) XIC(B_AUTO1_OPN) ,XIC(B_VLV_AUTO2_MD) XIC(B_AUTO2_OPN) ]XIO(DO_CLOSE_VLV)OTE(DO_OPEN_VLV);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[XIO(B_VLV_UNVLBL)[XIC(B_VLV_MAN_MD) XIC(HMI_MAN_CLS) ,XIC(B_VLV_AUTO1_MD) XIC(B_AUTO1_CLS) ,XIC(B_VLV_AUTO2_MD) XIC(B_AUTO2_CLS) ]XIO(DO_OPEN_VLV)OTE(DO_CLOSE_VLV);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Comment>
+<![CDATA[***********************************************************************************************
+DISCRETE OPEN/CLOSE TRACKING LOGIC FOR MANUAL MODE
+
+IF MANUAL MODE IS ACTIVE THEN SKIP MANUAL TRACKING FUNCTION RUNG
+
+WHEN THE EQUIMENT IS AVAILABLE FOR CONTROL AND NOT IN MANUAL MODE 
+THE OPEN/CLOSE POSITION STATUS FROM THE FIELD IS MOVED INTO THE MANUAL OPEN/CLOSE 
+DISCRETE ALLOWING FOR BUMPLESS TRANSFER
+FROM THE OTHER MODES OF CONTROL
+***********************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[***********************************************************************************************
+DISCRETE OPEN/CLOSE TRACKING LOGIC FOR MANUAL MODE
+
+IF MANUAL MODE IS ACTIVE THEN SKIP MANUAL TRACKING FUNCTION RUNG
+
+WHEN THE EQUIMENT IS AVAILABLE FOR CONTROL AND NOT IN MANUAL MODE 
+THE OPEN/CLOSE POSITION STATUS FROM THE FIELD IS MOVED INTO THE MANUAL OPEN/CLOSE 
+DISCRETE ALLOWING FOR BUMPLESS TRANSFER
+FROM THE OTHER MODES OF CONTROL
+***********************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[XIC(B_VLV_MAN_MD)JMP(SKIP_MAN_TRK);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[XIO(B_VLV_UNVLBL)XIO(B_VLV_MAN_MD)[XIC(B_VLV_IS_OPND) ONS(ONE_SHOT.6) OTE(HMI_MAN_OPN) ,XIC(B_VLV_IS_CLSD) ONS(ONE_SHOT.5) OTE(HMI_MAN_CLS) ];]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Comment>
+<![CDATA[******************************************************************************************************************
+
+******************************************************************************************************************
+]]>
+<LocalizedComment Lang="en-US">
+<![CDATA[******************************************************************************************************************
+
+******************************************************************************************************************
+]]>
+</LocalizedComment>
+</Comment>
+<Text>
+<![CDATA[LBL(SKIP_MAN_TRK)NOP();]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
